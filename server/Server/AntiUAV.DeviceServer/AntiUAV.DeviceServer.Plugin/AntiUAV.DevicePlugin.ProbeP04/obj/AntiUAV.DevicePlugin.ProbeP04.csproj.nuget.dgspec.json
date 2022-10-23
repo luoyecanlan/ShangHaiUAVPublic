@@ -1,0 +1,485 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\工作\\九州高蓬\\sh_zydl\\server\\Server\\AntiUAV.DeviceServer\\AntiUAV.DeviceServer.Plugin\\AntiUAV.DevicePlugin.ProbeP04\\AntiUAV.DevicePlugin.ProbeP04.csproj": {}
+  },
+  "projects": {
+    "D:\\工作\\九州高蓬\\sh_zydl\\server\\Bussiness\\AntiUAV.Bussiness\\AntiUAV.Bussiness.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\工作\\九州高蓬\\sh_zydl\\server\\Bussiness\\AntiUAV.Bussiness\\AntiUAV.Bussiness.csproj",
+        "projectName": "AntiUAV.Bussiness",
+        "projectPath": "D:\\工作\\九州高蓬\\sh_zydl\\server\\Bussiness\\AntiUAV.Bussiness\\AntiUAV.Bussiness.csproj",
+        "packagesPath": "C:\\Users\\11441\\.nuget\\packages\\",
+        "outputPath": "D:\\工作\\九州高蓬\\sh_zydl\\server\\Bussiness\\AntiUAV.Bussiness\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\11441\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "D:\\工作\\九州高蓬\\sh_zydl\\server\\DataAccess\\DbOrm.AntiUAV.Entity\\DbOrm.AntiUAV.Entity.csproj": {
+                "projectPath": "D:\\工作\\九州高蓬\\sh_zydl\\server\\DataAccess\\DbOrm.AntiUAV.Entity\\DbOrm.AntiUAV.Entity.csproj"
+              },
+              "D:\\工作\\九州高蓬\\sh_zydl\\server\\DataAccess\\DbOrm.AntiUAV\\DbOrm.AntiUAV.csproj": {
+                "projectPath": "D:\\工作\\九州高蓬\\sh_zydl\\server\\DataAccess\\DbOrm.AntiUAV\\DbOrm.AntiUAV.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "CSRedisCore": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
+            "Caching.CSRedis": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
+            "EasyNetQ": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "EasyNetQ.DI.Microsoft": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[5.6.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\工作\\九州高蓬\\sh_zydl\\server\\DataAccess\\DbOrm.AntiUAV.Entity\\DbOrm.AntiUAV.Entity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\工作\\九州高蓬\\sh_zydl\\server\\DataAccess\\DbOrm.AntiUAV.Entity\\DbOrm.AntiUAV.Entity.csproj",
+        "projectName": "DbOrm.AntiUAV.Entity",
+        "projectPath": "D:\\工作\\九州高蓬\\sh_zydl\\server\\DataAccess\\DbOrm.AntiUAV.Entity\\DbOrm.AntiUAV.Entity.csproj",
+        "packagesPath": "C:\\Users\\11441\\.nuget\\packages\\",
+        "outputPath": "D:\\工作\\九州高蓬\\sh_zydl\\server\\DataAccess\\DbOrm.AntiUAV.Entity\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\11441\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "targetAlias": "netcoreapp3.0",
+            "projectReferences": {
+              "D:\\工作\\九州高蓬\\sh_zydl\\server\\DataAccess\\DbOrm\\DbOrm.csproj": {
+                "projectPath": "D:\\工作\\九州高蓬\\sh_zydl\\server\\DataAccess\\DbOrm\\DbOrm.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "targetAlias": "netcoreapp3.0",
+          "dependencies": {
+            "linq2db": {
+              "target": "Package",
+              "version": "[2.9.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.0.1, 3.0.1]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\工作\\九州高蓬\\sh_zydl\\server\\DataAccess\\DbOrm.AntiUAV\\DbOrm.AntiUAV.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\工作\\九州高蓬\\sh_zydl\\server\\DataAccess\\DbOrm.AntiUAV\\DbOrm.AntiUAV.csproj",
+        "projectName": "DbOrm.AntiUAV",
+        "projectPath": "D:\\工作\\九州高蓬\\sh_zydl\\server\\DataAccess\\DbOrm.AntiUAV\\DbOrm.AntiUAV.csproj",
+        "packagesPath": "C:\\Users\\11441\\.nuget\\packages\\",
+        "outputPath": "D:\\工作\\九州高蓬\\sh_zydl\\server\\DataAccess\\DbOrm.AntiUAV\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\11441\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "targetAlias": "netcoreapp3.0",
+            "projectReferences": {
+              "D:\\工作\\九州高蓬\\sh_zydl\\server\\DataAccess\\DbOrm\\DbOrm.csproj": {
+                "projectPath": "D:\\工作\\九州高蓬\\sh_zydl\\server\\DataAccess\\DbOrm\\DbOrm.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "targetAlias": "netcoreapp3.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "linq2db.MySql": {
+              "target": "Package",
+              "version": "[2.9.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.0.1, 3.0.1]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\工作\\九州高蓬\\sh_zydl\\server\\DataAccess\\DbOrm\\DbOrm.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\工作\\九州高蓬\\sh_zydl\\server\\DataAccess\\DbOrm\\DbOrm.csproj",
+        "projectName": "DbOrm",
+        "projectPath": "D:\\工作\\九州高蓬\\sh_zydl\\server\\DataAccess\\DbOrm\\DbOrm.csproj",
+        "packagesPath": "C:\\Users\\11441\\.nuget\\packages\\",
+        "outputPath": "D:\\工作\\九州高蓬\\sh_zydl\\server\\DataAccess\\DbOrm\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\11441\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "targetAlias": "netcoreapp3.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "targetAlias": "netcoreapp3.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "linq2db": {
+              "target": "Package",
+              "version": "[2.9.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.0.1, 3.0.1]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\工作\\九州高蓬\\sh_zydl\\server\\Server\\AntiUAV.DeviceServer\\AntiUAV.DeviceServer.Abstractions\\AntiUAV.DeviceServer.Abstractions.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\工作\\九州高蓬\\sh_zydl\\server\\Server\\AntiUAV.DeviceServer\\AntiUAV.DeviceServer.Abstractions\\AntiUAV.DeviceServer.Abstractions.csproj",
+        "projectName": "AntiUAV.DeviceServer.Abstractions",
+        "projectPath": "D:\\工作\\九州高蓬\\sh_zydl\\server\\Server\\AntiUAV.DeviceServer\\AntiUAV.DeviceServer.Abstractions\\AntiUAV.DeviceServer.Abstractions.csproj",
+        "packagesPath": "C:\\Users\\11441\\.nuget\\packages\\",
+        "outputPath": "D:\\工作\\九州高蓬\\sh_zydl\\server\\Server\\AntiUAV.DeviceServer\\AntiUAV.DeviceServer.Abstractions\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\11441\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "D:\\工作\\九州高蓬\\sh_zydl\\server\\Bussiness\\AntiUAV.Bussiness\\AntiUAV.Bussiness.csproj": {
+                "projectPath": "D:\\工作\\九州高蓬\\sh_zydl\\server\\Bussiness\\AntiUAV.Bussiness\\AntiUAV.Bussiness.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Caching.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.Extensions.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[106.11.4, )"
+            },
+            "System.IO.Ports": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\工作\\九州高蓬\\sh_zydl\\server\\Server\\AntiUAV.DeviceServer\\AntiUAV.DeviceServer.Plugin\\AntiUAV.DevicePlugin.ProbeP04\\AntiUAV.DevicePlugin.ProbeP04.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\工作\\九州高蓬\\sh_zydl\\server\\Server\\AntiUAV.DeviceServer\\AntiUAV.DeviceServer.Plugin\\AntiUAV.DevicePlugin.ProbeP04\\AntiUAV.DevicePlugin.ProbeP04.csproj",
+        "projectName": "AntiUAV.DevicePlugin.ProbeP04",
+        "projectPath": "D:\\工作\\九州高蓬\\sh_zydl\\server\\Server\\AntiUAV.DeviceServer\\AntiUAV.DeviceServer.Plugin\\AntiUAV.DevicePlugin.ProbeP04\\AntiUAV.DevicePlugin.ProbeP04.csproj",
+        "packagesPath": "C:\\Users\\11441\\.nuget\\packages\\",
+        "outputPath": "D:\\工作\\九州高蓬\\sh_zydl\\server\\Server\\AntiUAV.DeviceServer\\AntiUAV.DeviceServer.Plugin\\AntiUAV.DevicePlugin.ProbeP04\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\11441\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "D:\\工作\\九州高蓬\\sh_zydl\\server\\Server\\AntiUAV.DeviceServer\\AntiUAV.DeviceServer.Abstractions\\AntiUAV.DeviceServer.Abstractions.csproj": {
+                "projectPath": "D:\\工作\\九州高蓬\\sh_zydl\\server\\Server\\AntiUAV.DeviceServer\\AntiUAV.DeviceServer.Abstractions\\AntiUAV.DeviceServer.Abstractions.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

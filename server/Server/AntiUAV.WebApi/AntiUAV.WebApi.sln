@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AntiUAV.WebApi", "AntiUAV.WebApi\AntiUAV.WebApi.csproj", "{1BB29110-FD93-4214-A5F4-E1227A83805A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bussiness", "Bussiness", "{81A3037B-65BC-4DC1-A63B-94C6F69D8DF9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{4152FA8B-D2F5-468D-812A-24A5D2616708}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbOrm", "..\..\DataAccess\DbOrm\DbOrm.csproj", "{093E598A-09A3-49AD-BA53-EE810CAF5343}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbOrm.AntiUAV", "..\..\DataAccess\DbOrm.AntiUAV\DbOrm.AntiUAV.csproj", "{4875BD2A-CA41-4D59-950A-E56B62CE5C81}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbOrm.AntiUAV.Entity", "..\..\DataAccess\DbOrm.AntiUAV.Entity\DbOrm.AntiUAV.Entity.csproj", "{31EB41E2-6517-43A5-9366-0B8FC1142C25}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AntiUAV.Bussiness", "..\..\Bussiness\AntiUAV.Bussiness\AntiUAV.Bussiness.csproj", "{D974979F-C6E7-416A-95A5-3D7142320F71}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1BB29110-FD93-4214-A5F4-E1227A83805A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BB29110-FD93-4214-A5F4-E1227A83805A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BB29110-FD93-4214-A5F4-E1227A83805A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BB29110-FD93-4214-A5F4-E1227A83805A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{093E598A-09A3-49AD-BA53-EE810CAF5343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{093E598A-09A3-49AD-BA53-EE810CAF5343}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{093E598A-09A3-49AD-BA53-EE810CAF5343}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{093E598A-09A3-49AD-BA53-EE810CAF5343}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4875BD2A-CA41-4D59-950A-E56B62CE5C81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4875BD2A-CA41-4D59-950A-E56B62CE5C81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4875BD2A-CA41-4D59-950A-E56B62CE5C81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4875BD2A-CA41-4D59-950A-E56B62CE5C81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31EB41E2-6517-43A5-9366-0B8FC1142C25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31EB41E2-6517-43A5-9366-0B8FC1142C25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31EB41E2-6517-43A5-9366-0B8FC1142C25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31EB41E2-6517-43A5-9366-0B8FC1142C25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D974979F-C6E7-416A-95A5-3D7142320F71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D974979F-C6E7-416A-95A5-3D7142320F71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D974979F-C6E7-416A-95A5-3D7142320F71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D974979F-C6E7-416A-95A5-3D7142320F71}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{093E598A-09A3-49AD-BA53-EE810CAF5343} = {4152FA8B-D2F5-468D-812A-24A5D2616708}
+		{4875BD2A-CA41-4D59-950A-E56B62CE5C81} = {4152FA8B-D2F5-468D-812A-24A5D2616708}
+		{31EB41E2-6517-43A5-9366-0B8FC1142C25} = {4152FA8B-D2F5-468D-812A-24A5D2616708}
+		{D974979F-C6E7-416A-95A5-3D7142320F71} = {81A3037B-65BC-4DC1-A63B-94C6F69D8DF9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3CD18614-0CCC-4F05-83A3-902EE3AE1819}
+	EndGlobalSection
+EndGlobal

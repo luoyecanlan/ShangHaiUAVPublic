@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<style type="text/css">
+			body,
+			html,
+			#baiduMap {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				margin: 0;
+				font-family: "微软雅黑";
+			}
+
+			.anchorBL {
+				display: none !important;
+			}
+		</style>
+		<script type="text/javascript" src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=Oiajj7pKKaaZ3P7nWr1nyXWdQjA2yKqj"></script>
+		<title>当前飞手位置</title>
+	</head>
+	<body>
+		<div id="baiduMap"></div>
+		<script type="text/javascript">
+			//获取参数
+			var getQuery = function() {
+				var _params = this.location.search.substring(1).split('&');
+				var _pObj = {};
+				_params.forEach(p => {
+					var arr = p.split('=');
+					_pObj[arr[0]] = decodeURIComponent(arr[1]);
+				});
+				return _pObj;
+			}
+			//初始化地图
+			BMapGL.Map.prototype.initMap = function(center, zoomLevel) {
+				this.centerAndZoom(center, zoomLevel);
+				this.enableScrollWheelZoom(true);
+				return this;
+			}
+
+			//新增标签
+			BMapGL.Map.prototype.addMarker = function(markerPoint, icon) {
+				var marker = new BMapGL.Marker(markerPoint); // 创建点		
+				marker.setIcon(icon);
+				this.addOverlay(marker);
+				return this;
+			}
+
+			//新增信息标签
+			BMapGL.Map.prototype.addLabel = function(labelInfo, labelPoint, fontStyle) {
+				var _flyer = new BMapGL.Label(labelInfo, {
+					position: labelPoint,
+					offset: new BMapGL.Size(24, 0)
+				});
+				_flyer.setStyle(fontStyle || {
+					color: '#000',
+					fontSize: '14px'
+				});
+				this.addOverlay(_flyer);
+				return this;
+			}
+
+			String.prototype.backLines = function(count){
+				if (this.length <= count) return this;
+				var newString = [];
+				var lines = this.length % count == 0? this.length / count: this.length / count + 1;
+				for (var i = 0; i < lines; i++) {
+					newString.push(this.substr(i * count, count))
+				}
+				return newString.join('<br/>');
+			}
+
+			window.onload = function() {
+				//console.log(1.2222.toFixed(2));				
+				var _paramObj = getQuery();
+				//固定偏移量
+				var _adddLng = 0.006527, //0.004894,//0.006978,
+					_addLat = 0.006051; //-0.005371;
+				var _rLng = parseFloat(_paramObj.lng) + _adddLng;
+				var _rLat = parseFloat(_paramObj.lat) + _addLat;
+				console.log(_paramObj)
+
+				var _baiduMap = new BMapGL.Map('baiduMap');
+				var _point = _paramObj ? new BMapGL.Point(_rLng, _rLat) : new BMapGL.Point(116.280190, 40.049191);
+				var _level = 20;
+				var _flyerMarker = new BMapGL.Icon('flyer.png', new BMapGL.Size(44, 44));
+
+				_baiduMap.initMap(_point, _level)
+					.addMarker(_point, _flyerMarker).addLabel(_paramObj.appAddr.backLines(10), _point, {
+						color: '#333',
+						fontSize: '14px',
+						height:'auto',
+						padding:'6px',
+						paddingBottom:'-16px',
+						border: '1px solid #666',
+						backgroundColor:'rgba(255,255,255,.8)'
+					});
+
+				// .addLabel("飞手位置:" + parseFloat(_paramObj.lng).toFixed(4) + "," + parseFloat(_paramObj.lat).toFixed(4), _point);
+			};
+		</script>
+	</body>
+</html>

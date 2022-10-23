@@ -1,0 +1,81 @@
+@keyframes rotate_left_to_right {
+  0%{
+    transform: rotate(45deg);
+  }
+  25%{
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(-45deg);
+  }
+  90%{
+    transform: rotate(15deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+@keyframes rotate_scale {
+  0%{
+    transform: scaleX(0);
+  }
+  100%{
+    transform: scaleX(1);
+  }
+}
+.night-sky-star {
+  opacity: 0;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  left: 500px;
+  top: 256px;
+  animation: myStar 3s ease-in-out infinite;
+}
+
+.night-sky__star {
+  width: 1px;
+  display: block;
+  position: absolute;
+  background-color: rgba(64,204,249,.4);
+  opacity: 0;
+  animation: star 7s linear infinite;
+}
+.night-sky__star::after {
+  content: '';
+  display: block;
+  border: 1px solid #43DCFF;
+  border-width: 0px 160px 3px 160px;
+  border-color: transparent transparent transparent rgba(64,204,249,.4);
+  transform: rotate(-45deg);
+}
+
+@keyframes myStar {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+@keyframes star {
+  0% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-500px, 300px);
+  }
+}

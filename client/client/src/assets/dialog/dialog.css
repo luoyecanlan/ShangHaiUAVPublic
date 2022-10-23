@@ -1,0 +1,88 @@
+
+.dialog-box__{
+  min-height: 480px;
+  min-width: 380px;
+  height: fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  border: 1px solid #43DCFF;
+  position: relative;
+  color: #43DCFF;
+  display: flex;
+  flex-direction: column;
+}
+.dialog-lt,.dialog-lb,.dialog-rb,.dialog-rt{
+  width: 90px;
+  height: 98px;
+  margin: -2px;
+  position: absolute;
+}
+.dialog-lt{
+  border-left: 4px solid #43DCFF;
+  border-top: 4px solid #43DCFF;
+}
+.dialog-lb{
+  border-left: 4px solid #43DCFF;
+  border-bottom: 4px solid #43DCFF;
+  bottom: 0px;
+}
+.dialog-rt{
+  border-right: 4px solid #43DCFF;
+  border-top: 4px solid #43DCFF;
+  right: 0px;
+}
+.dialog-rb{
+  border-right: 4px solid #43DCFF;
+  border-bottom: 4px solid #43DCFF;
+  right: 0px;
+  bottom: 0px;
+}
+.__dialog-box-header{
+  height: 55px;
+  line-height: 55px;
+  font-size: 16px;
+  background-origin: border-box;
+  font-family: mf;
+  display: flex;
+  flex-direction: row;
+}
+.__dialog-box-header span{
+  display: inline-block;
+}
+.__dialog-container{
+  flex: 1;
+  padding: 30px 20px;
+}
+.bg_01{
+  flex: 1;
+  background-image: url("../../assets/dialog/dialog-l-bg.png");
+}
+.bg_02{
+  width: 37px;
+  background-image: url("../../assets/dialog/dialog-l.png");
+}
+.bg_03{
+  width: 50px;
+  background-image: url("../../assets/dialog/dialog-m-bg.png");
+}
+.bg_04{
+  width: 25px;
+  background-image: url("../../assets/dialog/dialog-m.png");
+}
+.bg_05{
+  width:80px ;
+  background-image: url("../../assets/dialog/dialog-r-bg.png");
+}
+.title{
+  position: absolute;
+  padding-left: 16px;
+}
+.__dialog-row{
+  margin-top: 16px;
+}
+.__dialog-button {
+  font-size: 16px;
+  letter-spacing: 5px;
+  width: 100%;
+  margin-top: 16px;
+}

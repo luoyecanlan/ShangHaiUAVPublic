@@ -1,0 +1,633 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DbOrm.AntiUAV.Entity</name>
+    </assembly>
+    <members>
+        <member name="T:DbOrm.AntiUAV.Entity.DeviceBase">
+            <summary>
+            设备POCO实体基类
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.DeviceKeyBase">
+            <summary>
+            设备POCO实体基类（带主键）
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.DeviceKey">
+            <summary>
+            设备ID类
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.DeviceAdd">
+            <summary>
+            设备新建POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.DeviceDel">
+            <summary>
+            设备删除POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.DeviceCategoryInfo">
+            <summary>
+            设备类型POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.DeviceInfo">
+            <summary>
+            设备信息POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.DeviceUpdate">
+            <summary>
+            设备信息更新POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.DeviceUpdatePosition">
+            <summary>
+            设备位置更新POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.DeviceBaseInfo">
+            <summary>
+            设备基础信息
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.DeviceZoneBase">
+            <summary>
+            设备预警区关系POCO实体基类
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.DeviceZoneKeyBase">
+            <summary>
+            设备预警区关系POCO实体基类（带主键）
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.DeviceZoneDel">
+            <summary>
+            删除设备预警区关系POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.DriveDeviceBase">
+            <summary>
+             计算后雷达、广电、干扰设备的数据实体基类
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.DriveDeviceKeyBase">
+            <summary>
+             计算后雷达、广电、干扰设备的数据实体基类（带主键）
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.DriveDeviceKey">
+            <summary>
+            设备ID类
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.DriveDeviceAdd">
+            <summary>
+            计算后雷达、广电、干扰设备的数据新建POCO实体
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceAdd.Utc">
+            <summary>
+            RJK时间
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceAdd.Heading">
+             <summary>
+            偏北角
+             </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceAdd.Lat">
+            <summary>
+            RJK纬度
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceAdd.Lon">
+            <summary>
+            RJK经度
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceAdd.Alt">
+            <summary>
+            RJK海拔高度
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceAdd.UtcOe">
+            <summary>
+            光电时间
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceAdd.LatOe">
+            <summary>
+            光电纬度
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceAdd.LonOe">
+            <summary>
+            光电经度
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceAdd.AltOe">
+            <summary>
+            光电海拔高度
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceAdd.UtcRadar">
+            <summary>
+            雷达时间
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceAdd.LatRadar">
+            <summary>
+            雷达纬度
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceAdd.LonRadar">
+             <summary>
+            雷达经度
+             </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceAdd.AltRadar">
+            <summary>
+            雷达海拔高度
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceAdd.UtcIu">
+            <summary>
+            干扰器时间
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceAdd.LatIu">
+            <summary>
+            干扰器纬度
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceAdd.LonIu">
+            <summary>
+            干扰器经度
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceAdd.AltIu">
+            <summary>
+            干扰器海拔高度
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceAdd.DisOe">
+            <summary>
+            RJK 距离光电距离
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceAdd.DisRadar">
+            <summary>
+            RJK 距离雷达距离
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceAdd.DisIu">
+            <summary>
+            RJK 距离干扰器距离
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceAdd.AzOe">
+            <summary>
+            RJK 距离光电角度
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceAdd.AzRadar">
+            <summary>
+            RJK 距离雷达角度
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceAdd.AzIu">
+            <summary>
+            RJK 距离干扰器角度
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.DriveDeviceDel">
+            <summary>
+            删除POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.DriveDeviceInfo">
+            <summary>
+            计算后雷达、广电、干扰设备的数据POCO实体
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceInfo.Lat">
+            <summary>
+            纬度
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceInfo.Lon">
+            <summary>
+            经度
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceInfo.Alt">
+            <summary>
+            海拔高度
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceInfo.Heading">
+             <summary>
+            偏北角
+             </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.DriveDeviceUpdate">
+            <summary>
+            计算后雷达、广电、干扰设备的数据POCO实体
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceUpdate.Heading">
+             <summary>
+            偏北角
+             </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceUpdate.Utc">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceUpdate.Lat">
+            <summary>
+            纬度
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceUpdate.Lon">
+            <summary>
+            经度
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DriveDeviceUpdate.Alt">
+            <summary>
+            海拔高度
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.DeviceDataInfo">
+            <summary>
+            车载广电、雷达、干扰器设备距离中间RJK的角度以及距离POCO实体
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DeviceDataInfo.Name">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DeviceDataInfo.Dtype">
+            <summary>
+            设备类型0雷达 1光电 2干扰器
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DeviceDataInfo.Az">
+            <summary>
+            设备与中间RJK夹角
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.DeviceDataInfo.Dis">
+            <summary>
+            设备与中间RJK距离
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.HistoryTargetBase">
+            <summary>
+            历史目标POCO实体基类
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.HistoryTargetKeyBase">
+            <summary>
+            历史目标POCO实体基类（带主键）
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.HistoryTargetDel">
+            <summary>
+            历史目标删除POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.HistoryTargetAdd">
+            <summary>
+            新增历史目标POCO实体
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.HistoryTargetAdd.Category">
+            <summary>
+            目标类型，目标最多出现次数的类型
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.HistoryTargetAdd.CategoryProportion">
+            <summary>
+            目标类型概率
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.HistoryTargetAdd.DeviceCount">
+            <summary>
+            设备数量，目前暂时定：1，融合时候需要填写
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.HistoryTargetAdd.Count">
+            <summary>
+            点迹数
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.HistoryTargetAdd.Starttime">
+            <summary>
+            目标出现时间
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.HistoryTargetAdd.Endtime">
+            <summary>
+            目标消失时间
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.HistoryTargetAdd.ThreatMax">
+            <summary>
+            最大威胁度
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.HistoryTargetInfo">
+            <summary>
+            历史目标信息POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.HistoryTargetUpdate">
+            <summary>
+            历史目标更新POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.HistoryTrackBase">
+            <summary>
+            历史航迹POCO实体基类
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.HistoryTrackKeyBase">
+            <summary>
+            历史航迹POCO实体基类（带主键）
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.HistoryTrackDel">
+            <summary>
+            历史航迹删除POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.HistoryTrackAdd">
+            <summary>
+            历史新增航迹POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.HistoryTrackInfo">
+            <summary>
+            历史航迹信息POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.MapConfigBase">
+            <summary>
+            地图信息配置POCO实体基类
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.MapConfigKeyBase">
+            <summary>
+            地图信息配置POCO实体基类  （带主键）
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.MapConfigAdd">
+            <summary>
+            地图信息配置新建POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.MapConfigDel">
+            <summary>
+            地图配置信息删除POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.MapConfigInfo">
+            <summary>
+            地图配置信息查询POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.MapConfigUpdate">
+            <summary>
+            地图配置信息修改POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.PerWarningZoneBase">
+            <summary>
+            预警区POCO实体基类
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.PerWarningZoneKeyBase">
+            <summary>
+            预警区POCO实体基类（带主键）
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.PerWarningZoneDel">
+            <summary>
+            预警区删除POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.PerWarningZoneAdd">
+            <summary>
+            预警区新建POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.PerWarningZoneInfo">
+            <summary>
+            预警区信息POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.PerWarningZoneSimpleInfo">
+            <summary>
+            预警区简要信息POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.PerWarningZoneUpdate">
+            <summary>
+            预警区更新POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.PerWarningZoneGeoUpdate">
+            <summary>
+            预警区几何图形更新POCO实体
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.SummaryAdd.Category">
+            <summary>
+            0：类型；1：持续时长；2：轨迹点数；3：威胁等级；4：目标数
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.SummaryAdd.Key">
+            <summary>
+            统计指标项键
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.SummaryAdd.Value">
+            <summary>
+            统计结果
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.SummaryAdd.Timestamp">
+            <summary>
+            时间标签;格式（yyyyMMdd）
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.SummaryAdd.Createtime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.SummaryInfo.Category">
+            <summary>
+            0：类型；1：持续时长；2：轨迹点数；3：威胁等级；4：探测设备数
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.SummaryInfo.Key">
+            <summary>
+            统计指标项键
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.SummaryInfo.Value">
+            <summary>
+            统计结果
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.SummaryInfo.Timestamp">
+            <summary>
+            时间标签;格式（yyyyMMdd）
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.SummaryInfo.Createtime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.TargetTurnAdd">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.TargetTurnUpdate">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.TargetTurnDel">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.TargetTurnInfo">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.TokenBase">
+            <summary>
+            令牌POCO实体基类
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.TokenKeyBase">
+            <summary>
+            令牌POCO实体基类（带主键）
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.TokenAdd">
+            <summary>
+            新建令牌POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.TokenDel">
+            <summary>
+            删除令牌POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.TokenUpdate">
+            <summary>
+            更新令牌POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.UserDeviceBase">
+            <summary>
+            用户设备关系POCO实体基类
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.UserDeviceKeyBase">
+            <summary>
+            用户设备关系POCO实体基类（带主键）
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.UserDeviceInfo">
+            <summary>
+            用户设备关系信息POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.UserDeviceDel">
+            <summary>
+            删除用户设备关系POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.UserBase">
+            <summary>
+            用户POCO实体基类
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.UserKeyBase">
+            <summary>
+            用户POCO实体基类（带主键）
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.UserAdd">
+            <summary>
+            新建用户POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.UserInfo">
+            <summary>
+            用户信息POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.UserAllInfo">
+            <summary>
+            用户完整信息POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.UserSimpleInfo">
+            <summary>
+            用户简要信息POCO实体
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.UserSimpleInfo.Username">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.UserSimpleInfo.Nick">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:DbOrm.AntiUAV.Entity.UserSimpleInfo.Role">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.UserDel">
+            <summary>
+            删除用户POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.UserUpdate">
+            <summary>
+            用户信息更新POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.UserRoleUpdate">
+            <summary>
+            用户角色更新POCO实体
+            </summary>
+        </member>
+        <member name="T:DbOrm.AntiUAV.Entity.UserPasswordUpdate">
+            <summary>
+            用户密码更新POCO实体
+            </summary>
+        </member>
+    </members>
+</doc>

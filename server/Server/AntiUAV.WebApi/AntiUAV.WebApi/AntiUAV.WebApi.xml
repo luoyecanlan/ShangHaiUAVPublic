@@ -1,0 +1,1522 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AntiUAV.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:AntiUAV.WebApi.Bgs.DevStatusService">
+            <summary>
+            目标推送服务
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Bgs.MockDataService.MockTargetAsync(System.Boolean)">
+            <summary>
+            模拟目标数据
+            </summary>
+            <param name="isRemove"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Bgs.MockDataService.MockDeviceStatus">
+            <summary>
+            模拟设备状态信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AntiUAV.WebApi.Bgs.TargetCleanBgs">
+            <summary>
+            冗余目标清理任务
+            </summary>
+        </member>
+        <member name="T:AntiUAV.WebApi.Bgs.TargetPushService">
+            <summary>
+            目标推送服务
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Config.AuthConfig.SecurityKey">
+            <summary>
+            安全密钥
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Config.AuthConfig.Issuer">
+            <summary>
+            颁布者
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Config.AuthConfig.Audience">
+            <summary>
+            受众
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Config.AuthConfig.ExpireTime">
+            <summary>
+            过期时间（秒）
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Config.AuthConfig.ClockSkew">
+            <summary>
+            时钟偏差
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Config.PushTaskConfig.TargetInterval">
+            <summary>
+            目标更新时间间隔
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Config.PushTaskConfig.DevStatusInterval">
+            <summary>
+            设备状态更新时间间隔
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Config.UserConfig.DefaultPwd">
+            <summary>
+            默认密码
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Config.UserConfig.NewPwd">
+            <summary>
+            新用户默认密码
+            </summary>
+        </member>
+        <member name="T:AntiUAV.WebApi.Controllers.DevController">
+            <summary>
+            设备管理
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevController.GetAll">
+            <summary>
+            获取全部设备信息
+            </summary>
+            <returns>设备信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevController.Get(System.Int32,System.Int32,System.String,System.Boolean)">
+            <summary>
+            获取全部设备信息(按ID排序)
+            </summary>
+            <param name="index">页码</param>
+            <param name="size">页大小</param>
+            <param name="key">检索关键字,按照设备名称模糊查询</param>
+            <param name="desc">是否倒叙</param>
+            <returns>设备信息集合</returns>
+            <remarks>
+             关键字为 名称或者ID
+            </remarks>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevController.Get(System.Int32)">
+            <summary>
+            获取单个设备详细信息
+            </summary>
+            <param name="id">设备ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevController.Add(DbOrm.AntiUAV.Entity.DeviceAdd)">
+            <summary>
+            新增设备
+            </summary>
+            <param name="add">新增设备数据</param>
+            <returns>设备信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevController.Update(DbOrm.AntiUAV.Entity.DeviceUpdate)">
+            <summary>
+            修改设备信息
+            </summary>
+            <param name="update">修改设备信息数据</param>
+            <returns>设备信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevController.Del(System.Int32)">
+            <summary>
+            删除设备
+            </summary>
+            <param name="id">删除的设备ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevController.GetCategory">
+            <summary>
+            获取设备类型列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AntiUAV.WebApi.Controllers.DevOptController">
+            <summary>
+            用户管理
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevOptController.DevSwicth(System.Int32,System.Int32)">
+            <summary>
+            设备服务开关
+            </summary>
+            <param name="id">设备Id</param>
+            <param name="state">指定设备开关状态（0：关；1：开）</param>
+            <returns>结果仅代表开关命令下发结果，不代表设备服务真实的状态</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevOptController.InvokeCommand(System.Int32,System.Object)">
+            <summary>
+            下发指令到设备服务
+            </summary>
+            <param name="id">设备ID</param>
+            <param name="cmd">指令实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevOptController.DevGuidance(System.Int32)">
+            <summary>
+            目标引导
+            </summary>
+            <param name="tid">目标ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevRpcHelper.NotifyBaseInfoChanged(System.Int32)">
+            <summary>
+            通知信息修改
+            </summary>
+            <param name="devId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevRpcHelper.NotifyPerZonesChanged(System.Int32)">
+            <summary>
+            通知保护区修改
+            </summary>
+            <param name="devId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevRpcHelper.DoStart(System.Int32,System.String)">
+            <summary>
+            开始
+            </summary>
+            <param name="devId"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevRpcHelper.DoStop(System.Int32,System.String)">
+            <summary>
+            关闭
+            </summary>
+            <param name="devId"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevRpcHelper.DoSettingOpt(System.Int32,System.String)">
+            <summary>
+            设置下发
+            </summary>
+            <param name="devId"></param>
+            <param name="setting"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevRpcHelper.DoGuidanceOpt(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            引导
+            </summary>
+            <param name="devId"></param>
+            <param name="tgid"></param>
+            <param name="devFrom"></param>
+            <param name="opt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevRpcHelper.DoGuidancePosition(AntiUAV.DeviceServer.TargetPositionRequest)">
+            <summary>
+            位置引导
+            </summary>
+            <param name="targetPosition"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AntiUAV.WebApi.Controllers.RealTimeController">
+            <summary>
+            实时数据管理
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.RealTimeController.GetTarget(System.Int32)">
+            <summary>
+            获取全部目标信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.RealTimeController.GetTargetInfo(System.String)">
+            <summary>
+            获取目标详细信息
+            </summary>
+            <param name="id">目标编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.RealTimeController.GetDevStatus">
+            <summary>
+            获取设备状态信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.RealTimeController.GetDevStatus(System.Int32)">
+            <summary>
+            获取设备状态信息
+            </summary>
+            <param name="id">设备ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:AntiUAV.WebApi.Controllers.TargetHistoryController">
+            <summary>
+            目标历史数据管理
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.TargetHistoryController.Get(System.Int32)">
+            <summary>
+            获取历史数据概要
+            </summary>
+            <param name="day">最近天数</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.TargetHistoryController.GetHistory(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            获取历史目标信息
+            </summary>
+            <param name="index">页码</param>
+            <param name="size">分页大小</param>
+            <param name="day">最近天数</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.TargetHistoryController.Clean(System.Int32)">
+            <summary>
+            清理历史目标数据
+            </summary>
+            <param name="id">目标编号</param>
+            <returns></returns>
+        </member>
+        <member name="T:AntiUAV.WebApi.Controllers.TokenController">
+            <summary>
+            用户管理
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.TokenController.Get(System.Int32,System.Int32)">
+            <summary>
+            获取全部token
+            </summary>
+            <param name="index">页码</param>
+            <param name="size">分页大小</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.TokenController.Distory(System.String)">
+            <summary>
+            注销token
+            </summary>
+            <param name="id">token编号</param>
+            <returns></returns>
+        </member>
+        <member name="T:AntiUAV.WebApi.Controllers.UserAuthController">
+            <summary>
+            系统身份认证
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserAuthController.LoginAsync(AntiUAV.WebApi.Model.LoginInfoModel)">
+            <summary>
+            系统登录
+            </summary>
+            <param name="data">用户信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserAuthController.RefreshTokenAsync(System.String)">
+            <summary>
+            刷新token
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserAuthController.LogoutAsync">
+            <summary>
+            退出系统
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserAuthController.GetUserAsync">
+            <summary>
+            获取当前登录的用户信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserAuthController.WriteToCacheAsync(System.Int32,System.String,System.String)">
+            <summary>
+            生成Token并写入缓存
+            </summary>
+            <param name="uid">用户ID</param>
+            <param name="role">角色</param>
+            <param name="username">用户名</param>
+            <returns></returns>
+        </member>
+        <member name="T:AntiUAV.WebApi.Controllers.UserController">
+            <summary>
+            用户管理
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserController.Get(System.Int32,System.Int32,System.String,System.Boolean)">
+            <summary>
+            获取全部用户信息
+            </summary>
+            <param name="index">页码</param>
+            <param name="size">页大小</param>
+            <param name="key">检索关键字(用户名,昵称模糊查询),查询全部时传''</param>
+            <param name="desc">是否倒序（默认false）</param>
+            <returns>用户信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserController.Get(System.Int32)">
+            <summary>
+            获取指定用户详细信息
+            </summary>
+            <param name="id">用户ID</param>
+            <returns>用户信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserController.Add(DbOrm.AntiUAV.Entity.UserAdd)">
+            <summary>
+            新增用户
+            </summary>
+            <param name="add">新增用户数据</param>
+            <returns>用户信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserController.Reset(System.Int32)">
+            <summary>
+            重置密码
+            </summary>
+            <param name="id">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserController.Del(System.Int32)">
+            <summary>
+             删除用户
+            </summary>
+            <param name="id">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserController.UpdateInfo(DbOrm.AntiUAV.Entity.UserUpdate)">
+            <summary>
+            修改用户基本信息(当前用户)
+            </summary>
+            <param name="update"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserController.UpdatePwd(AntiUAV.WebApi.Model.UserPwdUpdate)">
+            <summary>
+            修改用户密码(当前用户)
+            </summary>
+            <param name="update"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AntiUAV.WebApi.Controllers.ZoneController">
+            <summary>
+            预警区域管理
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ZoneController.Get(System.Int32,System.Int32,System.String,System.Boolean)">
+            <summary>
+            获取全部预警区
+            </summary>
+            <param name="index">页码</param>
+            <param name="size">页大小</param>
+            <param name="key">检索关键字,按照设备名称模糊查询</param>
+            <param name="desc">是否倒序（默认false）</param>
+            <returns>预警区信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ZoneController.GetAll">
+            <summary>
+            获取全部预警区
+            </summary>
+            <returns>预警区信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ZoneController.GetInfo(System.Int32)">
+            <summary>
+            获取单个告警区详细信息
+            </summary>
+            <param name="id">预警区ID</param>
+            <returns>预警区信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ZoneController.Add(DbOrm.AntiUAV.Entity.PerWarningZoneAdd)">
+            <summary>
+            新增预警区
+            </summary>
+            <param name="add">预警区数据</param>
+            <returns>预警区信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ZoneController.Update(DbOrm.AntiUAV.Entity.PerWarningZoneUpdate)">
+            <summary>
+            修改预警区信息
+            </summary>
+            <param name="update">预警区信息数据</param>
+            <returns>预警区信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ZoneController.Update(DbOrm.AntiUAV.Entity.PerWarningZoneGeoUpdate)">
+            <summary>
+            修改预警区信息
+            </summary>
+            <param name="update">预警区信息数据</param>
+            <returns>预警区信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ZoneController.Del(System.Int32)">
+            <summary>
+            删除预警区
+            </summary>
+            <param name="id">预警区ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.AuthExtension.GetCurrentTokenCacheKey(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            获取当前请求的令牌缓存KEY
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.AuthExtension.GetTokenCacheKey(Microsoft.AspNetCore.Http.HttpContext,System.String)">
+            <summary>
+            获取指定的令牌缓存KEY
+            </summary>
+            <param name="context"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.AuthExtension.GetCurrentToken(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            获取当前请求的令牌
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.AuthExtension.GetCurrentUserId(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            获取当前用户ID
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.AuthExtension.GetCurrentUserRole(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            获取当前用户角色
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.ConfigExtension.Get32MD5(System.String)">
+            <summary>
+            32位MD5加密
+            </summary>
+            <param name="pwd"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AntiUAV.WebApi.Filter.StandardResultFilter">
+            <summary>
+            返回结果统一标准化过滤器
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Filter.StandardResultFilter.OnResultExecuting(Microsoft.AspNetCore.Mvc.Filters.ResultExecutingContext)">
+            <summary>
+            重写结果序列化
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:AntiUAV.WebApi.Model.AntiUAVAuthException">
+            <summary>
+            认证异常
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Model.AntiUAVAuthException.#ctor(System.String,System.Int32)">
+            <summary>
+            构造
+            </summary>
+            <param name="message"></param>
+            <param name="httpCode"></param>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.AntiUAVAuthException.HttpCode">
+            <summary>
+            http码
+            </summary>
+        </member>
+        <member name="T:AntiUAV.WebApi.Model.ServiceResponse">
+            <summary>
+            结果标准化模型
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.ServiceResponse.HttpCode">
+            <summary>
+            HttpCode
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.ServiceResponse.Code">
+            <summary>
+            服务码
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.ServiceResponse.Message">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="T:AntiUAV.WebApi.Model.ServiceResponse`1">
+            <summary>
+            结果标准化模型
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.ServiceResponse`1.Data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="T:AntiUAV.WebApi.Model.ServiceResponseCode">
+            <summary>
+            服务码枚举
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.ServiceResponseCode.Success">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.ServiceResponseCode.Fail">
+            <summary>
+            失败
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.ServiceResponseCode.Error">
+            <summary>
+            异常
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.ServiceResponseCode.NoPermission">
+            <summary>
+            无权限
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.ServiceResponseCode.NotFoundService">
+            <summary>
+            未找到服务
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.ServiceResponseCode.RequestError">
+            <summary>
+            请求异常
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.ServiceResponseCode.UnKnowError">
+            <summary>
+            未知异常
+            </summary>
+        </member>
+        <member name="T:AntiUAV.WebApi.Model.SystemRole">
+            <summary>
+            系统角色
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.SystemRole.Super">
+            <summary>
+            超管角色
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.SystemRole.Admin">
+            <summary>
+            管理员角色
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.SystemRole.Client">
+            <summary>
+            客户端角色
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.SystemRole.Device">
+            <summary>
+            设备端角色
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.SystemRole.DeviceOperation">
+            <summary>
+            设备端操作员角色
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.SystemRole.All">
+            <summary>
+            全部角色
+            </summary>
+        </member>
+        <member name="T:AntiUAV.WebApi.Model.TokenModel">
+            <summary>
+            令牌模型
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.TokenModel.uid">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.TokenModel.rold">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.TokenModel.username">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.TokenModel.access_token">
+            <summary>
+            访问令牌
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.TokenModel.expire_in">
+            <summary>
+            过期时长
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.TokenModel.nbf">
+            <summary>
+            授权时间
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.TokenModel.refresh_token">
+            <summary>
+            刷新令牌
+            </summary>
+        </member>
+        <member name="T:AntiUAV.WebApi.Model.UserPwdUpdate">
+            <summary>
+            用户修改密码模型
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.UserPwdUpdate.OldPwd">
+            <summary>
+            旧密码
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.UserPwdUpdate.NewPwd">
+            <summary>
+            新密码
+            </summary>
+        </member>
+        <member name="T:AntiUAV.WebApi.SwaggerDoc.ApiGroupAttribute">
+            <summary>
+            系统分组特性
+            </summary>
+        </member>
+        <member name="T:AntiUAV.WebApi.SwaggerDoc.ApiGroupNames">
+            <summary>
+            系统分组枚举值
+            </summary>
+        </member>
+        <member name="T:AntiUAV.WebApi.SwaggerDoc.GroupInfoAttribute">
+            <summary>
+            系统模块枚举注释
+            </summary>
+        </member>
+        <member name="T:AntiUAV.CenterServer.CenterserverReflection">
+            <summary>Holder for reflection information generated from centerserver.proto</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.CenterserverReflection.Descriptor">
+            <summary>File descriptor for centerserver.proto</summary>
+        </member>
+        <member name="T:AntiUAV.CenterServer.InfoRequest">
+            <summary>
+            设备基础信息请求
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.InfoRequest.DevidFieldNumber">
+            <summary>Field number for the "devid" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.InfoRequest.Devid">
+            <summary>
+            设备ID
+            </summary>
+        </member>
+        <member name="T:AntiUAV.CenterServer.DeviceInfoReply">
+            <summary>
+            设备信息响应
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.DeviceInfoReply.DevidFieldNumber">
+            <summary>Field number for the "devid" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.DeviceInfoReply.Devid">
+            <summary>
+            设备ID
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.DeviceInfoReply.NameFieldNumber">
+            <summary>Field number for the "name" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.DeviceInfoReply.Name">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.DeviceInfoReply.DisplayFieldNumber">
+            <summary>Field number for the "Display" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.DeviceInfoReply.Display">
+            <summary>
+            设备描述
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.DeviceInfoReply.CategoryFieldNumber">
+            <summary>Field number for the "Category" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.DeviceInfoReply.Category">
+            <summary>
+            设备分类
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.DeviceInfoReply.IpFieldNumber">
+            <summary>Field number for the "ip" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.DeviceInfoReply.Ip">
+            <summary>
+            设备ip
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.DeviceInfoReply.PortFieldNumber">
+            <summary>Field number for the "port" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.DeviceInfoReply.Port">
+            <summary>
+            设备端口
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.DeviceInfoReply.LipFieldNumber">
+            <summary>Field number for the "lip" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.DeviceInfoReply.Lip">
+            <summary>
+            设备监听ip
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.DeviceInfoReply.LportFieldNumber">
+            <summary>Field number for the "lport" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.DeviceInfoReply.Lport">
+            <summary>
+            设备监听端口
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.DeviceInfoReply.LatFieldNumber">
+            <summary>Field number for the "lat" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.DeviceInfoReply.Lat">
+            <summary>
+            设备纬度
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.DeviceInfoReply.LngFieldNumber">
+            <summary>Field number for the "lng" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.DeviceInfoReply.Lng">
+            <summary>
+            设备经度
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.DeviceInfoReply.AltFieldNumber">
+            <summary>Field number for the "alt" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.DeviceInfoReply.Alt">
+            <summary>
+            设备海拔
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.DeviceInfoReply.CoverRFieldNumber">
+            <summary>Field number for the "coverR" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.DeviceInfoReply.CoverR">
+            <summary>
+            覆盖半径
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.DeviceInfoReply.CoverSFieldNumber">
+            <summary>Field number for the "coverS" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.DeviceInfoReply.CoverS">
+            <summary>
+            覆盖起始角
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.DeviceInfoReply.CoverEFieldNumber">
+            <summary>Field number for the "coverE" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.DeviceInfoReply.CoverE">
+            <summary>
+            覆盖结束角
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.DeviceInfoReply.RectifyAzFieldNumber">
+            <summary>Field number for the "RectifyAz" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.DeviceInfoReply.RectifyAz">
+            <summary>
+            纠偏水平角
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.DeviceInfoReply.RectifyElFieldNumber">
+            <summary>Field number for the "RectifyEl" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.DeviceInfoReply.RectifyEl">
+            <summary>
+            纠偏俯仰角
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.DeviceInfoReply.ThreadAssessmentCountFieldNumber">
+            <summary>Field number for the "ThreadAssessmentCount" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.DeviceInfoReply.ThreadAssessmentCount">
+            <summary>
+            威胁判定N个点判定一次
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.DeviceInfoReply.TargetTimeOutFieldNumber">
+            <summary>Field number for the "TargetTimeOut" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.DeviceInfoReply.TargetTimeOut">
+            <summary>
+            目标超时时间（秒）
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.DeviceInfoReply.StatusReportingIntervalFieldNumber">
+            <summary>Field number for the "StatusReportingInterval" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.DeviceInfoReply.StatusReportingInterval">
+            <summary>
+            状态上报时间间隔
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.DeviceInfoReply.ProbeReportingIntervalFieldNumber">
+            <summary>Field number for the "ProbeReportingInterval" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.DeviceInfoReply.ProbeReportingInterval">
+            <summary>
+            航迹上报时间间隔
+            </summary>
+        </member>
+        <member name="T:AntiUAV.CenterServer.ZoneInfoReply">
+            <summary>
+            预警区信息响应
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.ZoneInfoReply.DevidFieldNumber">
+            <summary>Field number for the "devid" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.ZoneInfoReply.Devid">
+            <summary>
+            设备ID
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.ZoneInfoReply.ZonesFieldNumber">
+            <summary>Field number for the "zones" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.ZoneInfoReply.Zones">
+            <summary>
+            预警区集合
+            </summary>
+        </member>
+        <member name="T:AntiUAV.CenterServer.ZoneInfo">
+            <summary>
+            预警区信息
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.ZoneInfo.IdFieldNumber">
+            <summary>Field number for the "id" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.ZoneInfo.Id">
+            <summary>
+            预警区ID
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.ZoneInfo.NameFieldNumber">
+            <summary>Field number for the "Name" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.ZoneInfo.Name">
+            <summary>
+            预警区名称
+            </summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.ZoneInfo.CircumcircleRFieldNumber">
+            <summary>Field number for the "CircumcircleR" field.</summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.ZoneInfo.CircumcircleRadiationRFieldNumber">
+            <summary>Field number for the "CircumcircleRadiationR" field.</summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.ZoneInfo.CircumcircleLatFieldNumber">
+            <summary>Field number for the "CircumcircleLat" field.</summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.ZoneInfo.CircumcircleLngFieldNumber">
+            <summary>Field number for the "CircumcircleLng" field.</summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.ZoneInfo.BDistanceFieldNumber">
+            <summary>Field number for the "BDistance" field.</summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.ZoneInfo.ADistanceFieldNumber">
+            <summary>Field number for the "ADistance" field.</summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.ZoneInfo.NormalDistanceFieldNumber">
+            <summary>Field number for the "NormalDistance" field.</summary>
+        </member>
+        <member name="F:AntiUAV.CenterServer.ZoneInfo.UpdatetimeFieldNumber">
+            <summary>Field number for the "Updatetime" field.</summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.ZoneInfo.Updatetime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="T:AntiUAV.CenterServer.CenterGrpcService">
+            <summary>
+            设备服务Grpc服务
+            </summary>
+        </member>
+        <member name="P:AntiUAV.CenterServer.CenterGrpcService.Descriptor">
+            <summary>Service descriptor</summary>
+        </member>
+        <member name="T:AntiUAV.CenterServer.CenterGrpcService.CenterGrpcServiceBase">
+            <summary>Base class for server-side implementations of CenterGrpcService</summary>
+        </member>
+        <member name="M:AntiUAV.CenterServer.CenterGrpcService.CenterGrpcServiceBase.GetDeviceInfo(AntiUAV.CenterServer.InfoRequest,Grpc.Core.ServerCallContext)">
+            <summary>
+            设备信息修改
+            </summary>
+            <param name="request">The request received from the client.</param>
+            <param name="context">The context of the server-side call handler being invoked.</param>
+            <returns>The response to send back to the client (wrapped by a task).</returns>
+        </member>
+        <member name="M:AntiUAV.CenterServer.CenterGrpcService.BindService(AntiUAV.CenterServer.CenterGrpcService.CenterGrpcServiceBase)">
+            <summary>Creates service definition that can be registered with a server</summary>
+            <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+        </member>
+        <member name="M:AntiUAV.CenterServer.CenterGrpcService.BindService(Grpc.Core.ServiceBinderBase,AntiUAV.CenterServer.CenterGrpcService.CenterGrpcServiceBase)">
+            <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
+            Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
+            <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
+            <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+        </member>
+        <member name="T:AntiUAV.DeviceServer.DeviceserverReflection">
+            <summary>Holder for reflection information generated from deviceserver.proto</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.DeviceserverReflection.Descriptor">
+            <summary>File descriptor for deviceserver.proto</summary>
+        </member>
+        <member name="T:AntiUAV.DeviceServer.DeviceReply">
+            <summary>
+            设备服务响应通用模型
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.DeviceReply.CodeFieldNumber">
+            <summary>Field number for the "code" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.DeviceReply.Code">
+            <summary>
+            响应码
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.DeviceReply.MessageFieldNumber">
+            <summary>Field number for the "message" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.DeviceReply.Message">
+            <summary>
+            响应消息
+            </summary>
+        </member>
+        <member name="T:AntiUAV.DeviceServer.DeviceReply.Types">
+            <summary>Container for nested types declared in the DeviceReply message type.</summary>
+        </member>
+        <member name="T:AntiUAV.DeviceServer.DeviceReply.Types.CodeEnum">
+            <summary>
+            响应码
+            </summary>
+        </member>
+        <member name="T:AntiUAV.DeviceServer.BaseInfoRequest">
+            <summary>
+            设备基础信息请求
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.BaseInfoRequest.DevidFieldNumber">
+            <summary>Field number for the "devid" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.BaseInfoRequest.Devid">
+            <summary>
+            设备ID
+            </summary>
+        </member>
+        <member name="T:AntiUAV.DeviceServer.StartOptRequest">
+            <summary>
+            设备开启操作请求
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.StartOptRequest.DevidFieldNumber">
+            <summary>Field number for the "devid" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.StartOptRequest.Devid">
+            <summary>
+            设备ID
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.StartOptRequest.ParamFieldNumber">
+            <summary>Field number for the "param" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.StartOptRequest.Param">
+            <summary>
+            开启参数
+            </summary>
+        </member>
+        <member name="T:AntiUAV.DeviceServer.StopOptRequest">
+            <summary>
+            设备停止操作请求
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.StopOptRequest.DevidFieldNumber">
+            <summary>Field number for the "devid" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.StopOptRequest.Devid">
+            <summary>
+            设备ID
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.StopOptRequest.ParamFieldNumber">
+            <summary>Field number for the "param" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.StopOptRequest.Param">
+            <summary>
+            停止参数
+            </summary>
+        </member>
+        <member name="T:AntiUAV.DeviceServer.SettingOptRequest">
+            <summary>
+            设备参数设置请求
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.SettingOptRequest.DevidFieldNumber">
+            <summary>Field number for the "devid" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.SettingOptRequest.Devid">
+            <summary>
+            设备ID
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.SettingOptRequest.SettingFieldNumber">
+            <summary>Field number for the "Setting" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.SettingOptRequest.Setting">
+            <summary>
+            设置参数
+            </summary>
+        </member>
+        <member name="T:AntiUAV.DeviceServer.GuidanceOptRequest">
+            <summary>
+            设备引导设置请求
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.GuidanceOptRequest.DevidFieldNumber">
+            <summary>Field number for the "devid" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.GuidanceOptRequest.Devid">
+            <summary>
+            设备ID
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.GuidanceOptRequest.TgidFieldNumber">
+            <summary>Field number for the "tgid" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.GuidanceOptRequest.Tgid">
+            <summary>
+            目标ID
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.GuidanceOptRequest.TgfromFieldNumber">
+            <summary>Field number for the "tgfrom" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.GuidanceOptRequest.Tgfrom">
+            <summary>
+            目标来源设备ID
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.GuidanceOptRequest.OptFieldNumber">
+            <summary>Field number for the "opt" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.GuidanceOptRequest.Opt">
+            <summary>
+            设置操作 1-新增 2-删除
+            </summary>
+        </member>
+        <member name="T:AntiUAV.DeviceServer.TargetPositionRequest">
+            <summary>
+            目标位置请求
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.TargetPositionRequest.TgidFieldNumber">
+            <summary>Field number for the "tgid" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.TargetPositionRequest.Tgid">
+            <summary>
+            目标ID
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.TargetPositionRequest.CoordinateFieldNumber">
+            <summary>Field number for the "coordinate" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.TargetPositionRequest.Coordinate">
+            <summary>
+            坐标类型
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.TargetPositionRequest.LatFieldNumber">
+            <summary>Field number for the "lat" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.TargetPositionRequest.Lat">
+            <summary>
+            纬度
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.TargetPositionRequest.LngFieldNumber">
+            <summary>Field number for the "lng" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.TargetPositionRequest.Lng">
+            <summary>
+            经度
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.TargetPositionRequest.AltFieldNumber">
+            <summary>Field number for the "alt" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.TargetPositionRequest.Alt">
+            <summary>
+            海拔
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.TargetPositionRequest.AzFieldNumber">
+            <summary>Field number for the "az" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.TargetPositionRequest.Az">
+            <summary>
+            方位
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.TargetPositionRequest.ElFieldNumber">
+            <summary>Field number for the "el" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.TargetPositionRequest.El">
+            <summary>
+            俯仰/高度
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.TargetPositionRequest.DisFieldNumber">
+            <summary>Field number for the "dis" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.TargetPositionRequest.Dis">
+            <summary>
+            距离
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.TargetPositionRequest.ProbeIdFieldNumber">
+            <summary>Field number for the "probeId" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.TargetPositionRequest.ProbeId">
+            <summary>
+            探测设备ID
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.TargetPositionRequest.ProbeLatFieldNumber">
+            <summary>Field number for the "probeLat" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.TargetPositionRequest.ProbeLat">
+            <summary>
+            探测设备纬度
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.TargetPositionRequest.ProbeLngFieldNumber">
+            <summary>Field number for the "probeLng" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.TargetPositionRequest.ProbeLng">
+            <summary>
+            探测设备经度
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.TargetPositionRequest.ProbeAltFieldNumber">
+            <summary>Field number for the "probeAlt" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.TargetPositionRequest.ProbeAlt">
+            <summary>
+            探测设备海拔
+            </summary>
+        </member>
+        <member name="F:AntiUAV.DeviceServer.TargetPositionRequest.TimeFieldNumber">
+            <summary>Field number for the "time" field.</summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.TargetPositionRequest.Time">
+            <summary>
+            位置时间
+            </summary>
+        </member>
+        <member name="T:AntiUAV.DeviceServer.DeviceGrpcService">
+            <summary>
+            设备服务Grpc服务
+            </summary>
+        </member>
+        <member name="P:AntiUAV.DeviceServer.DeviceGrpcService.Descriptor">
+            <summary>Service descriptor</summary>
+        </member>
+        <member name="T:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient">
+            <summary>Client for DeviceGrpcService</summary>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.#ctor(Grpc.Core.ChannelBase)">
+            <summary>Creates a new client for DeviceGrpcService</summary>
+            <param name="channel">The channel to use to make remote calls.</param>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.#ctor(Grpc.Core.CallInvoker)">
+            <summary>Creates a new client for DeviceGrpcService that uses a custom <c>CallInvoker</c>.</summary>
+            <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.#ctor">
+            <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.#ctor(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Protected constructor to allow creation of configured clients.</summary>
+            <param name="configuration">The client configuration.</param>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.BaseInfoChange(AntiUAV.DeviceServer.BaseInfoRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            设备信息修改
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.BaseInfoChange(AntiUAV.DeviceServer.BaseInfoRequest,Grpc.Core.CallOptions)">
+            <summary>
+            设备信息修改
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.BaseInfoChangeAsync(AntiUAV.DeviceServer.BaseInfoRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            设备信息修改
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.BaseInfoChangeAsync(AntiUAV.DeviceServer.BaseInfoRequest,Grpc.Core.CallOptions)">
+            <summary>
+            设备信息修改
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.PerZonesChange(AntiUAV.DeviceServer.BaseInfoRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            设备预警区变化
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.PerZonesChange(AntiUAV.DeviceServer.BaseInfoRequest,Grpc.Core.CallOptions)">
+            <summary>
+            设备预警区变化
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.PerZonesChangeAsync(AntiUAV.DeviceServer.BaseInfoRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            设备预警区变化
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.PerZonesChangeAsync(AntiUAV.DeviceServer.BaseInfoRequest,Grpc.Core.CallOptions)">
+            <summary>
+            设备预警区变化
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.Start(AntiUAV.DeviceServer.StartOptRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            设备开始操作
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.Start(AntiUAV.DeviceServer.StartOptRequest,Grpc.Core.CallOptions)">
+            <summary>
+            设备开始操作
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.StartAsync(AntiUAV.DeviceServer.StartOptRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            设备开始操作
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.StartAsync(AntiUAV.DeviceServer.StartOptRequest,Grpc.Core.CallOptions)">
+            <summary>
+            设备开始操作
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.Stop(AntiUAV.DeviceServer.StopOptRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            设备停止操作
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.Stop(AntiUAV.DeviceServer.StopOptRequest,Grpc.Core.CallOptions)">
+            <summary>
+            设备停止操作
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.StopAsync(AntiUAV.DeviceServer.StopOptRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            设备停止操作
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.StopAsync(AntiUAV.DeviceServer.StopOptRequest,Grpc.Core.CallOptions)">
+            <summary>
+            设备停止操作
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.Setting(AntiUAV.DeviceServer.SettingOptRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            设备运行参数操作
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.Setting(AntiUAV.DeviceServer.SettingOptRequest,Grpc.Core.CallOptions)">
+            <summary>
+            设备运行参数操作
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.SettingAsync(AntiUAV.DeviceServer.SettingOptRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            设备运行参数操作
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.SettingAsync(AntiUAV.DeviceServer.SettingOptRequest,Grpc.Core.CallOptions)">
+            <summary>
+            设备运行参数操作
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.Guidance(AntiUAV.DeviceServer.GuidanceOptRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            设备设置引导操作
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.Guidance(AntiUAV.DeviceServer.GuidanceOptRequest,Grpc.Core.CallOptions)">
+            <summary>
+            设备设置引导操作
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.GuidanceAsync(AntiUAV.DeviceServer.GuidanceOptRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            设备设置引导操作
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.GuidanceAsync(AntiUAV.DeviceServer.GuidanceOptRequest,Grpc.Core.CallOptions)">
+            <summary>
+            设备设置引导操作
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.GuidancePosition(AntiUAV.DeviceServer.TargetPositionRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            引导位置
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.GuidancePosition(AntiUAV.DeviceServer.TargetPositionRequest,Grpc.Core.CallOptions)">
+            <summary>
+            引导位置
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.GuidancePositionAsync(AntiUAV.DeviceServer.TargetPositionRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            引导位置
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.GuidancePositionAsync(AntiUAV.DeviceServer.TargetPositionRequest,Grpc.Core.CallOptions)">
+            <summary>
+            引导位置
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:AntiUAV.DeviceServer.DeviceGrpcService.DeviceGrpcServiceClient.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+        </member>
+    </members>
+</doc>

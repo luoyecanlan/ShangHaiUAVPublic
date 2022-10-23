@@ -1,0 +1,13 @@
+D:\工作\中银\sh_zydl\server\DataAccess\DbOrm.AntiUAV\bin\Debug\netcoreapp3.0\DbOrm.AntiUAV.deps.json
+D:\工作\中银\sh_zydl\server\DataAccess\DbOrm.AntiUAV\bin\Debug\netcoreapp3.0\DbOrm.AntiUAV.dll
+D:\工作\中银\sh_zydl\server\DataAccess\DbOrm.AntiUAV\bin\Debug\netcoreapp3.0\DbOrm.AntiUAV.pdb
+D:\工作\中银\sh_zydl\server\DataAccess\DbOrm.AntiUAV\bin\Debug\netcoreapp3.0\DbOrm.dll
+D:\工作\中银\sh_zydl\server\DataAccess\DbOrm.AntiUAV\bin\Debug\netcoreapp3.0\DbOrm.pdb
+D:\工作\中银\sh_zydl\server\DataAccess\DbOrm.AntiUAV\obj\Debug\netcoreapp3.0\DbOrm.AntiUAV.csproj.AssemblyReference.cache
+D:\工作\中银\sh_zydl\server\DataAccess\DbOrm.AntiUAV\obj\Debug\netcoreapp3.0\DbOrm.AntiUAV.GeneratedMSBuildEditorConfig.editorconfig
+D:\工作\中银\sh_zydl\server\DataAccess\DbOrm.AntiUAV\obj\Debug\netcoreapp3.0\DbOrm.AntiUAV.AssemblyInfoInputs.cache
+D:\工作\中银\sh_zydl\server\DataAccess\DbOrm.AntiUAV\obj\Debug\netcoreapp3.0\DbOrm.AntiUAV.AssemblyInfo.cs
+D:\工作\中银\sh_zydl\server\DataAccess\DbOrm.AntiUAV\obj\Debug\netcoreapp3.0\DbOrm.AntiUAV.csproj.CoreCompileInputs.cache
+D:\工作\中银\sh_zydl\server\DataAccess\DbOrm.AntiUAV\obj\Debug\netcoreapp3.0\DbOrm.AntiUAV.csproj.CopyComplete
+D:\工作\中银\sh_zydl\server\DataAccess\DbOrm.AntiUAV\obj\Debug\netcoreapp3.0\DbOrm.AntiUAV.dll
+D:\工作\中银\sh_zydl\server\DataAccess\DbOrm.AntiUAV\obj\Debug\netcoreapp3.0\DbOrm.AntiUAV.pdb

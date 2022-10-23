@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath></OutputPath>
+    <NoWarn>1701;1702;IDE1006</NoWarn>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\AntiUAV.DeviceServer.Abstractions\AntiUAV.DeviceServer.Abstractions.csproj" />
+  </ItemGroup>
+  
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="mkdir $(SolutionDir)$(SolutionName)\$(OutDir)plugin\&#xD;&#xA;xcopy /Y $(TargetPath)  $(SolutionDir)$(SolutionName)\$(OutDir)plugin" />
+  </Target>
+
+</Project>

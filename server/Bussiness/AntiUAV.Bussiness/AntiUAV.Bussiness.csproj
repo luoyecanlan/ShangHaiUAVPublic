@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Caching.CSRedis" Version="3.3.0" />
+    <PackageReference Include="CSRedisCore" Version="3.3.0" />
+    <PackageReference Include="EasyNetQ" Version="5.0.0" />
+    <PackageReference Include="EasyNetQ.DI.Microsoft" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataAccess\DbOrm.AntiUAV.Entity\DbOrm.AntiUAV.Entity.csproj" />
+    <ProjectReference Include="..\..\DataAccess\DbOrm.AntiUAV\DbOrm.AntiUAV.csproj" />
+  </ItemGroup>
+
+</Project>

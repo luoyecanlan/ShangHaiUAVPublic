@@ -1,0 +1,165 @@
+@font-face {
+  font-family:MF-Lihei;
+  src: url("../fonts/MFLiHei-Regular.otf");
+}
+@font-face {
+  font-family:Microsoft-YH;
+  src: url("../fonts/wryh.ttf");
+}
+/*@font-face {*/
+/*  font-family: SourceHanSansCN;*/
+/*  src: url("../fonts/SourceHanSansCN-Normal.otf");*/
+/*}*/
+/*@font-face {*/
+/*  font-family: SourceHanSansCN-Bold;*/
+/*  src: url("../fonts/SourceHanSansCN-Bold.otf");*/
+/*}*/
+/*@font-face {*/
+/*  font-family: SourceHanSansCN-R;*/
+/*  src: url("../fonts/SourceHanSansCN-Regular.otf");*/
+/*}*/
+.page-box{
+  padding: 10px;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+.table-page{
+  padding-top: 10px;
+  text-align: center;
+  height: 50px;
+}
+.link-button{
+  text-align: center;
+  margin: 0;
+  cursor: pointer;
+  transform-origin: center center;
+}
+.link-button:hover {
+  animation: rotate_left_to_right 0.5s;
+}
+.input-search{
+  width: 180px !important;
+  margin: 0 5px;
+}
+
+/*单行显示省略号*/
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/*多行显示省略号*/
+.row2-ellipsis{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.full-row{
+  width: 100%;
+}
+.right-box{
+  width: 80%;
+  margin: 0 auto;
+}
+.info-title .iconfont{
+  font-size: 20px;
+  margin-right: 10px;
+}
+.info-item {
+  line-height: 44px;
+  color: rgba(64,204,249,0.6);
+}
+.info-item-title {
+  color: #40cef9;
+}
+
+
+
+/*表格边框相关*/
+.box-border{
+  margin: -3px;
+  position: absolute;
+}
+.border-lt{
+  border-left: 5px solid #40cef9;
+  border-top: 5px solid #40cef9;
+  left: 0px;
+  top: 0px;
+  width: 90px;
+  height: 150px;
+}
+.border-rt{
+  border-right: 5px solid #40cef9;
+  border-top: 5px solid #40cef9;
+  right: 0px;
+  top: 0px;
+  width: 90px;
+  height: 150px;
+}
+.border-lb{
+  border-left: 5px solid #40cef9;
+  border-bottom: 5px solid #40cef9;
+  left: 0px;
+  bottom: 0px;
+  width: 90px;
+  height: 50px;
+}
+.border-rb{
+  border-right: 5px solid #40cef9;
+  border-bottom: 5px solid #40cef9;
+  right: 0px;
+  bottom: 0px;
+  width: 90px;
+  height: 50px;
+}
+.box-inset-shadow{
+  box-shadow: rgba(64,206,249,0.2) 0 0 30px 20px inset;
+}
+
+.box-inset-shadow_{
+  box-shadow: rgba(64,206,249,0.2) 0 0 10px 10px inset;
+}
+
+.box-title-font{
+  font-size: 32px;
+  color: #40cef9;
+  line-height: 110px;
+  padding-left: 106px;
+  font-weight: bold;
+}
+
+
+/*弹框样式*/
+.drawer-box__{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20px !important;
+}
+.scroll-box{
+  position:relative !important;
+}
+.scroll{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+}
+
+/*过渡动画*/
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+
+*[slot="suffix"].light-color,.light-color{
+  color: rgba(64,204,249,0.5);
+}
+

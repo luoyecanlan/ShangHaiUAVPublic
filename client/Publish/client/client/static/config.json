@@ -1,0 +1,10 @@
+{
+  "api_url": "http://localhost:8099",
+  "flyer_url": "http://localhost:8083/index.html",
+  "infraredToken": "",
+  "visibleLightToken": "",
+  "map_center": [
+    121.503428,31.238447
+  ]
+}
+

@@ -1,0 +1,74 @@
+.__group-box__{
+  padding: 10px 20px 6px;
+  /*border: 1px solid #40cef9;*/
+  box-shadow: 0 0 5px 5px rgba(64,204,249,0.2);
+  -webkit-box-shadow:  0 0 5px 5px rgba(64,204,249,0.2);
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 14px !important;
+}
+.device-icon-box__{
+  width: 100px;
+  height: 100px;
+  margin: 0 14px;
+  border: 1px solid #40cef9;
+  border-radius: 50%;
+  background-color: #0f152f;
+  position: relative;
+}
+.device-icon-box__ img{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.device-info-box__{
+  flex: 1;
+}
+
+.device-title__{
+  color: #40CEF9;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 36px;
+}
+.device-info-box__ .device-info-item__{
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.5px;
+}
+
+.bold-font__{
+  color: #40cef9 !important;
+  font-weight: bold;
+}
+
+.device-info-item__{
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 1px;
+  color: rgba(64,204,249,0.5);
+}
+
+.group-item-box__{
+  flex: 1;
+}
+
+.cover-bg__{
+  min-height: 53px;
+  background-image: url("../../assets/device/cover.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+.group-middle__{
+  height: 40px;
+  width: 8px;
+  margin:20px 8px;
+  border: 1px solid #40cef9;
+  border-right: 1px solid transparent;
+}
+

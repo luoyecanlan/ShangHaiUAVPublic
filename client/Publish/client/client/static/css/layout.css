@@ -1,0 +1,80 @@
+@font-face {
+  font-family:MF-Lihei;
+  src: url("../fonts/MFLiHei-Regular.otf");
+}
+
+.page-box{
+  padding: 10px;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+.table-title{
+  height: 50px;
+}
+.table-label{
+  line-height: 50px;
+  color: #1DA57A;
+}
+.table-page{
+  padding-top: 10px;
+  text-align: center;
+  height: 50px;
+  background: #f4f4f4;
+}
+.link-button{
+  height: 40px;
+  text-align: center;
+  width: 30px;
+  margin: 0;
+}
+.link-button:hover {
+  animation: rotate_left_to_right 0.5s;
+}
+.input-search{
+  width: 180px !important;
+  margin: 0 5px;
+}
+
+/*单行显示省略号*/
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/*多行显示省略号*/
+.row2-ellipsis{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.full-row{
+  width: 100%;
+}
+.right-box{
+  width: 80%;
+  margin: 0 auto;
+}
+.info-title{
+  line-height: 44px;
+  color: #1DA57A;
+  font-size: 18px;
+}
+.info-title .iconfont{
+  font-size: 20px;
+  margin-right: 10px;
+}
+.info-item {
+  line-height: 44px;
+  color: #999999;
+}
+.info-item-title {
+  color: #1da57a;
+}
+
+.ol-control {
+  /*display: none !important;*/
+}

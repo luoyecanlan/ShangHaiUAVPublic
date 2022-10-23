@@ -1,0 +1,1418 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AntiUAV.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:AntiUAV.WebApi.Bgs.DevStatusService">
+            <summary>
+            目标推送服务
+            </summary>
+        </member>
+        <member name="T:AntiUAV.WebApi.Bgs.ObstructControlReceiveService">
+            <summary>
+            接收公安发出的干扰控制指令
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:AntiUAV.WebApi.Bgs.ObstructControlReceiveService.StructToBytes(System.Object)" -->
+        <member name="T:AntiUAV.WebApi.Bgs.TargetCleanBgs">
+            <summary>
+            冗余目标清理任务
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Bgs.TargetCleanBgs.BackupData(System.String)">
+            <summary>
+            备份数据
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Bgs.TargetCleanBgs.CleanData(System.String)">
+            <summary>
+            清理数据 
+            </summary>
+            <param name="_backupTag"></param>
+        </member>
+        <member name="T:AntiUAV.WebApi.Bgs.TargetPushService">
+            <summary>
+            目标推送服务
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Config.AuthConfig.SecurityKey">
+            <summary>
+            安全密钥
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Config.AuthConfig.Issuer">
+            <summary>
+            颁布者
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Config.AuthConfig.Audience">
+            <summary>
+            受众
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Config.AuthConfig.ExpireTime">
+            <summary>
+            过期时间（秒）
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Config.AuthConfig.ClockSkew">
+            <summary>
+            时钟偏差
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Config.PushTaskConfig.TargetInterval">
+            <summary>
+            目标更新时间间隔
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Config.PushTaskConfig.DevStatusInterval">
+            <summary>
+            设备状态更新时间间隔
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Config.PushTaskConfig.RelationShipInterval">
+            <summary>
+            关联关系更新时间间隔
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Config.UserConfig.DefaultPwd">
+            <summary>
+            默认密码
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Config.UserConfig.NewPwd">
+            <summary>
+            新用户默认密码
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ConfigController.GetMapConfigAll">
+            <summary>
+            获取全部地图配置信息
+            </summary>
+            <returns>设备信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ConfigController.GetMapConfig(System.Int32)">
+            <summary>
+            获取单条地图配置详情
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ConfigController.AddMapConfig(DbOrm.AntiUAV.Entity.MapConfigAdd)">
+            <summary>
+            新增地图配置信息
+            </summary>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ConfigController.UpdateMapConfig(DbOrm.AntiUAV.Entity.MapConfigUpdate)">
+            <summary>
+            修改地图配置信息
+            </summary>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ConfigController.DeleteMapConfig(System.Int32)">
+            <summary>
+            删除地图配置信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ConfigController.GetTargetTurnAll">
+            <summary>
+            获取全部转发配置信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ConfigController.GetTargetTurn(System.Int32)">
+            <summary>
+            获取单条转发配置详细信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ConfigController.AddTargetTurn(DbOrm.AntiUAV.Entity.TargetTurnAdd)">
+            <summary>
+            新增转发配置
+            </summary>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ConfigController.UpdateTargetTurn(DbOrm.AntiUAV.Entity.TargetTurnUpdate)">
+            <summary>
+            修改转发配置
+            </summary>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ConfigController.DeleteTargetTurn(System.Int32)">
+            <summary>
+            删除转发配置
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ConfigController.GetPersonalizationAll">
+            <summary>
+            获取个性化配置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ConfigController.GetPersonalization(System.Int32)">
+            <summary>
+            获取单条个性化配置详情
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ConfigController.AddPersonalization(DbOrm.AntiUAV.Entity.PersonalizationAdd)">
+            <summary>
+            新增个性化配置
+            </summary>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ConfigController.UpdatePersonalization(DbOrm.AntiUAV.Entity.PersonalizationUpdate)">
+            <summary>
+            修改个性化配置
+            </summary>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ConfigController.DeletePersonalization(System.Int32)">
+            <summary>
+            删除个性化配置
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ConfigController.GetSysConfigAll">
+            <summary>
+            获取系统配置键值对列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ConfigController.GetConfig(System.Int32)">
+            <summary>
+            获取系统配置键值对详情
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ConfigController.GetConfig(System.String)">
+            <summary>
+            根据名称获取系统配置键值对详情
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ConfigController.AddSysConfig(DbOrm.AntiUAV.Entity.SysConfigAdd)">
+            <summary>
+            新增系统配置信息
+            </summary>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ConfigController.UpdateSysConfig(DbOrm.AntiUAV.Entity.SysConfig)">
+            <summary>
+            修改系统配置信息
+            </summary>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ConfigController.DeleteSysConfig(System.Int32)">
+            <summary>
+            删除系统配置信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AntiUAV.WebApi.Controllers.DevController">
+            <summary>
+            设备管理
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevController.GetAll">
+            <summary>
+            获取全部设备信息
+            </summary>
+            <returns>设备信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevController.GetAllBaseInfo">
+            <summary>
+            获取设备基础信息  位置信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevController.Get(System.Int32,System.Int32,System.String,System.Boolean)">
+            <summary>
+            获取全部设备信息(按ID排序)
+            </summary>
+            <param name="index">页码</param>
+            <param name="size">页大小</param>
+            <param name="key">检索关键字,按照设备名称模糊查询</param>
+            <param name="desc">是否倒叙</param>
+            <returns>设备信息集合</returns>
+            <remarks>
+             关键字为 名称或者ID
+            </remarks>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevController.Get(System.Int32)">
+            <summary>
+            获取单个设备详细信息
+            </summary>
+            <param name="id">设备ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevController.Add(DbOrm.AntiUAV.Entity.DeviceAdd)">
+            <summary>
+            新增设备
+            </summary>
+            <param name="add">新增设备数据</param>
+            <returns>设备信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevController.Update(DbOrm.AntiUAV.Entity.DeviceUpdate)">
+            <summary>
+            修改设备信息
+            </summary>
+            <param name="update">修改设备信息数据</param>
+            <returns>设备信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevController.Del(System.Int32)">
+            <summary>
+            删除设备
+            </summary>
+            <param name="id">删除的设备ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevController.GetCategory">
+            <summary>
+            获取设备类型列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AntiUAV.WebApi.Controllers.DevOptController">
+            <summary>
+            设备操作相关
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevOptController.AddTrack(System.String)">
+            <summary>
+            开始跟踪
+            </summary>
+            <param name="tgid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevOptController.RemoveTrack(System.String)">
+            <summary>
+            取消跟踪
+            </summary>
+            <param name="tgid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevOptController.AddMonitor(System.String)">
+            <summary>
+            新增监视
+            </summary>
+            <param name="tgid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevOptController.DeleteMonitor(System.String)">
+            <summary>
+            删除监视
+            </summary>
+            <param name="rid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevOptController.AddHit(System.String)">
+            <summary>
+            开启打击
+            </summary>
+            <param name="tgid"></param>
+            <param name="hitId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevOptController.RemoveHit(System.String)">
+            <summary>
+            取消打击
+            </summary>
+            <param name="rid"></param>
+            <param name="hitId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevOptController.RemoveHit(System.String,System.String)">
+            <summary>
+            取消打击
+            </summary>
+            <param name="rid"></param>
+            <param name="hitId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevOptController.AddDecoy(System.String)">
+            <summary>
+            开启诱骗
+            </summary>
+            <param name="tgid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevOptController.RemoveDecoy(System.String)">
+            <summary>
+            取消诱骗
+            </summary>
+            <param name="tgid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevOptController.DevSwicth(System.Int32,System.Boolean,System.String)">
+            <summary>
+            设备开关
+            </summary>
+            <param name="id">设备Id</param>
+            <param name="open">指定设备开关</param>
+            <param name="param">参数</param>
+            <returns>结果仅代表开关命令下发结果，不代表设备服务真实的状态</returns>      
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevOptController.DevServerSwicth(System.Int32,System.Boolean)">
+            <summary>
+            设备服务开关
+            </summary>
+            <param name="id">设备Id</param>
+            <param name="open">指定设备开关</param>
+            <returns>结果仅代表开关命令下发结果，不代表设备服务真实的状态</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevOptController.TransmitToDev(AntiUAV.Bussiness.Models.TurnTargetInfo)">
+            <summary>
+            新增转发
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevOptController.SetRectifyToDev(AntiUAV.Bussiness.Models.DeviceRectify)">
+            <summary>
+            纠偏设置
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevOptController.PTZToMonitor(AntiUAV.Bussiness.Models.DevicePTZInfo)">
+            <summary>
+            云台控制（水平俯仰 指北归零 视场焦距）
+            </summary>
+            <param name="devicePTZInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevOptController.FollowToMonitor(AntiUAV.Bussiness.Models.DeviceFollow)">
+            <summary>
+            手动跟踪启停
+            </summary>
+            <param name="deviceFollow"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevOptController.DeleteTransmit(System.String)">
+            <summary>
+            删除转发
+            </summary>
+            <param name="rid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevOptController.AddRelationShip(System.String,System.Func{DbOrm.AntiUAV.Entity.DeviceInfo,System.Boolean},AntiUAV.Bussiness.Models.RelationshipsType)">
+            <summary>
+            建立关联关系
+            </summary>
+            <param name="tgid"></param>
+            <param name="func"></param>
+            <param name="_rtype"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevOptController.RemoveRelationShip(System.String)">
+            <summary>
+            移除关联关系
+            </summary>
+            <param name="rid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevOptController.AddHitRelationShip(System.String,System.Func{DbOrm.AntiUAV.Entity.DeviceInfo,System.Boolean},AntiUAV.Bussiness.Models.RelationshipsType,System.String,AntiUAV.Bussiness.Models.HitFreqModel)">
+            <summary>
+            建立关联关系
+            </summary>
+            <param name="tgid"></param>
+            <param name="func"></param>
+            <param name="_rtype"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.DevOptController.RemoveHItRelationShip(System.String,System.String)">
+            <summary>
+            移除关联关系
+            </summary>
+            <param name="rid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.GisController.Convert3DPositionAzimuthAndPitchInfo(AntiUAV.Bussiness.GisToolModel)">
+            <summary>
+            根据两点的经纬高计算目标对应设备的方位、俯仰、距离、高度
+            </summary>
+            <param name="gis"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.GisController.ConvertLonLat(AntiUAV.Bussiness.PositionModel)">
+            <summary>
+            已知一个点经纬度，方位角，距离，计算另一个点经纬度   (二维坐标)
+            </summary>
+            <param name="mode">仅需要传递中心点经纬度及目标的距离和方位即可</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.GisController.ConvertRealHeight(System.Double,System.Double)">
+            <summary>
+            根据俯仰和距离计算真是高度
+            </summary>
+            <param name="pitch">俯仰</param>
+            <param name="dis">距离</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.GisController.GetTargetPosition(AntiUAV.Bussiness.PositionModel)">
+            <summary>
+            根据设备点的经纬度和相对目标的方位、距离、俯仰，计算目标点经纬高
+            </summary>
+            <param name="position"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.GisController.ToTuple(System.Double)">
+            <summary>
+            度转度分秒
+            </summary>
+            <param name="deg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.GisController.ToDegrade(System.Double,System.Double,System.Double)">
+            <summary>
+            度分秒转度
+            </summary>
+            <param name="deg">度</param>
+            <param name="min">分</param>
+            <param name="sed">秒</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.GisController.CorrectByPoints(AntiUAV.Bussiness.GisTool.PointsCorrectNorthModel)">
+            <summary>
+            两点校北
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.GisController.CorrectByRelative(AntiUAV.Bussiness.GisTool.RelativeCorrectNorthModel)">
+            <summary>
+            相对校北
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AntiUAV.WebApi.Controllers.RealTimeController">
+            <summary>
+            实时数据管理
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.RealTimeController.GetSHTarget">
+            <summary>
+            获取全部目标信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.RealTimeController.GetTarget(System.Int32,System.Int32)">
+            <summary>
+            获取全部目标信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.RealTimeController.GetTargetInfo(System.String)">
+            <summary>
+            获取目标详细信息
+            </summary>
+            <param name="id">目标编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.RealTimeController.GetDevStatus">
+            <summary>
+            获取设备状态信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.RealTimeController.GetDevStatus(System.Int32)">
+            <summary>
+            获取设备状态信息
+            </summary>
+            <param name="id">设备ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:AntiUAV.WebApi.Controllers.TargetHistoryController">
+            <summary>
+            目标历史数据管理
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.TargetHistoryController.GetHistoryAsync(System.Int32,System.Int32,AntiUAV.Bussiness.Models.SeachConditions)">
+            <summary>
+            获取历史目标信息
+            </summary>
+            <param name="index"></param>
+            <param name="size"></param>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.TargetHistoryController.HeatMapAsync">
+            <summary>
+            熱力圖 前一星期无人机统计
+            </summary>
+            <param name="index"></param>
+            <param name="size"></param>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.TargetHistoryController.riverAsync">
+            <summary>
+            河流图 统计前一个月
+            </summary>
+            <param name="index"></param>
+            <param name="size"></param>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.TargetHistoryController.weiguiDataAsync">
+            <summary>
+            仪表盘 当天统计
+            </summary>
+            <param name="index"></param>
+            <param name="size"></param>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.TargetHistoryController.GetHistoryIdsAsync(AntiUAV.Bussiness.Models.SeachConditions)">
+            <summary>
+            获取历史目标信息
+            </summary>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.TargetHistoryController.GetUavModelAsync">
+            <summary>
+            获取所有飞机类型ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.TargetHistoryController.GetTrackAsync(System.String)">
+            <summary>
+            根据目标编号获取轨迹数据
+            </summary>
+            <param name="tgId">目标编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.TargetHistoryController.GetSummaryAsync(AntiUAV.Bussiness.Models.SummaryCategory)">
+            <summary>
+            历史目标统计(上一天)
+            </summary>
+            <param name="category">统计类别(0:目标类型；1：持续时长；2：轨迹点数；3：威胁等级；4：目标数)</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.TargetHistoryController.GetWeekSummaryAsync(AntiUAV.Bussiness.Models.SummaryCategory)">
+            <summary>
+             历史目标统计 （一周）
+            </summary>
+            <param name="category"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.TargetHistoryController.GetMonthSummaryAsync(AntiUAV.Bussiness.Models.SummaryCategory)">
+            <summary>
+             历史目标统计 （一月）
+            </summary>
+            <param name="category"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.TargetHistoryController.GetYearSummaryAsync(AntiUAV.Bussiness.Models.SummaryCategory)">
+            <summary>
+             历史目标统计 （一年）
+            </summary>
+            <param name="category"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.TargetHistoryController.Clean(System.Int32)">
+            <summary>
+            清理历史目标数据
+            </summary>
+            <param name="id">目标编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.TargetHistoryController.CleanAll(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            清理全部历史目标数据
+            </summary>
+            <param name="id">目标编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.TargetHistoryController.ExportHistoryTarget(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            导出历史数据
+            </summary>
+            <param name="ids"></param>
+            <returns>生成文件访问路径</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.TargetHistoryController.ExportLog(System.String)">
+            <summary>
+            导出操作日志
+            </summary>
+            <param name="datestr">日志时间</param>
+            <returns>日志下载路径</returns>
+        </member>
+        <member name="T:AntiUAV.WebApi.Controllers.TestSpectrum">
+            <summary>
+            测试频谱web服务
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.TestSpectrum.Get">
+            <summary>
+            测试智控未来频谱
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AntiUAV.WebApi.Controllers.TokenController">
+            <summary>
+            用户管理
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.TokenController.Get(System.Int32,System.Int32)">
+            <summary>
+            获取全部token
+            </summary>
+            <param name="index">页码</param>
+            <param name="size">分页大小</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.TokenController.Distory(System.String)">
+            <summary>
+            注销token
+            </summary>
+            <param name="id">token编号</param>
+            <returns></returns>
+        </member>
+        <member name="T:AntiUAV.WebApi.Controllers.UserAuthController">
+            <summary>
+            系统身份认证
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserAuthController.LoginAsync(AntiUAV.WebApi.Model.LoginInfoModel)">
+            <summary>
+            系统登录
+            </summary>
+            <param name="data">用户信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserAuthController.RefreshTokenAsync(System.String)">
+            <summary>
+            刷新token
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserAuthController.LogoutAsync">
+            <summary>
+            退出系统
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserAuthController.GetUserAsync">
+            <summary>
+            获取当前登录的用户信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserAuthController.WriteToCache(System.Int32,System.String,System.String)">
+            <summary>
+            生成Token并写入缓存
+            </summary>
+            <param name="uid">用户ID</param>
+            <param name="role">角色</param>
+            <param name="username">用户名</param>
+            <returns></returns>
+        </member>
+        <member name="F:AntiUAV.WebApi.Controllers.UserAuthController.tokenLock">
+            <summary>
+            token刷新锁
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserAuthController.RefreshAndWriteToken(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            刷新并写入token
+            </summary>
+            <param name="r_key"></param>
+            <param name="uid"></param>
+            <param name="role"></param>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AntiUAV.WebApi.Controllers.UserController">
+            <summary>
+            用户管理
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserController.Get(System.Int32,System.Int32,System.String,System.Boolean)">
+            <summary>
+            获取全部用户信息
+            </summary>
+            <param name="index">页码</param>
+            <param name="size">页大小</param>
+            <param name="key">检索关键字(用户名,昵称模糊查询),查询全部时传''</param>
+            <param name="desc">是否倒序（默认false）</param>
+            <returns>用户信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserController.Get(System.Int32)">
+            <summary>
+            获取指定用户详细信息
+            </summary>
+            <param name="id">用户ID</param>
+            <returns>用户信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserController.Add(DbOrm.AntiUAV.Entity.UserAdd)">
+            <summary>
+            新增用户
+            </summary>
+            <param name="add">新增用户数据</param>
+            <returns>用户信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserController.Reset(System.Int32)">
+            <summary>
+            重置密码
+            </summary>
+            <param name="id">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserController.Del(System.Int32)">
+            <summary>
+             删除用户
+            </summary>
+            <param name="id">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserController.UpdateInfo(DbOrm.AntiUAV.Entity.UserUpdate)">
+            <summary>
+            修改用户基本信息(当前用户)
+            </summary>
+            <param name="update"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.UserController.UpdatePwd(AntiUAV.WebApi.Model.UserPwdUpdate)">
+            <summary>
+            修改用户密码(当前用户)
+            </summary>
+            <param name="update"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AntiUAV.WebApi.Controllers.WhiteListController">
+            <summary>
+            白名单管理
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.WhiteListController.Get(System.Int32,System.Int32,System.String,System.Boolean)">
+            <summary>
+            获取全部白名单
+            </summary>
+            <param name="index">页码</param>
+            <param name="size">页大小</param>
+            <param name="key">检索关键字,按照设备名称模糊查询</param>
+            <param name="desc">是否倒序（默认false）</param>
+            <returns>白名单信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.WhiteListController.GetAll">
+            <summary>
+            获取全部白名单
+            </summary>
+            <returns>预警区信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.WhiteListController.GetInfo(System.Int32)">
+            <summary>
+            获取单个白名单详细信息
+            </summary>
+            <param name="id">预警区ID</param>
+            <returns>白名单信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.WhiteListController.Add(DbOrm.AntiUAV.Entity.WhiteListAdd)">
+            <summary>
+            新增白名单
+            </summary>
+            <param name="add">白名单数据</param>
+            <returns>白名单信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.WhiteListController.Update(DbOrm.AntiUAV.Entity.WhiteListUpdate)">
+            <summary>
+            修改白名单信息
+            </summary>
+            <param name="update">白名单信息数据</param>
+            <returns>白名单信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.WhiteListController.Del(System.Int32)">
+            <summary>
+            删除白名单
+            </summary>
+            <param name="id">白名单ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:AntiUAV.WebApi.Controllers.ZoneController">
+            <summary>
+            预警区域管理
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ZoneController.Get(System.Int32,System.Int32,System.String,System.Boolean)">
+            <summary>
+            获取全部预警区
+            </summary>
+            <param name="index">页码</param>
+            <param name="size">页大小</param>
+            <param name="key">检索关键字,按照设备名称模糊查询</param>
+            <param name="desc">是否倒序（默认false）</param>
+            <returns>预警区信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ZoneController.GetAll">
+            <summary>
+            获取全部预警区
+            </summary>
+            <returns>预警区信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ZoneController.GetInfo(System.Int32)">
+            <summary>
+            获取单个告警区详细信息
+            </summary>
+            <param name="id">预警区ID</param>
+            <returns>预警区信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ZoneController.Add(DbOrm.AntiUAV.Entity.PerWarningZoneAdd)">
+            <summary>
+            新增预警区
+            </summary>
+            <param name="add">预警区数据</param>
+            <returns>预警区信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ZoneController.Update(DbOrm.AntiUAV.Entity.PerWarningZoneUpdate)">
+            <summary>
+            修改预警区信息
+            </summary>
+            <param name="update">预警区信息数据</param>
+            <returns>预警区信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ZoneController.Update(DbOrm.AntiUAV.Entity.PerWarningZoneGeoUpdate)">
+            <summary>
+            修改预警区信息
+            </summary>
+            <param name="update">预警区信息数据</param>
+            <returns>预警区信息</returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.Controllers.ZoneController.Del(System.Int32)">
+            <summary>
+            删除预警区
+            </summary>
+            <param name="id">预警区ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.AuthExtension.GetCurrentTokenCacheKey(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            获取当前请求的令牌缓存KEY
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.AuthExtension.GetTokenCacheKey(Microsoft.AspNetCore.Http.HttpContext,System.String)">
+            <summary>
+            获取指定的令牌缓存KEY
+            </summary>
+            <param name="context"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.AuthExtension.GetCurrentToken(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            获取当前请求的令牌
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.AuthExtension.GetCurrentUsername(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            获取当前请求用户名
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.AuthExtension.GetCurrentUserId(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            获取当前用户ID
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.AuthExtension.GetCurrentUserRole(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            获取当前用户角色
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AntiUAV.WebApi.ConfigExtension.Get32MD5(System.String)">
+            <summary>
+            32位MD5加密
+            </summary>
+            <param name="pwd"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AntiUAV.WebApi.Filter.StandardResultFilter">
+            <summary>
+            返回结果统一标准化过滤器
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Filter.StandardResultFilter.OnResultExecuting(Microsoft.AspNetCore.Mvc.Filters.ResultExecutingContext)">
+            <summary>
+            重写结果序列化
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:AntiUAV.WebApi.Model.AntiUAVAuthException">
+            <summary>
+            认证异常
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Model.AntiUAVAuthException.#ctor(System.String,System.Int32)">
+            <summary>
+            构造
+            </summary>
+            <param name="message"></param>
+            <param name="httpCode"></param>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.AntiUAVAuthException.HttpCode">
+            <summary>
+            http码
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.DeviceStatusModel.IsGuidance">
+            <summary>
+            是否正在引导数据
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.DeviceStatusModel.IsBeGuidance">
+            <summary>
+            是否正在被引导
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.DeviceStatusModel.IsTurnTarget">
+            <summary>
+            是否正在转发数据
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.GuidanceTargetModel.FromDeviceId">
+            <summary>
+            引导设备Id
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.GuidanceTargetModel.TargetId">
+            <summary>
+            目标Id
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.GuidanceTargetModel.ToDeviceId">
+            <summary>
+            被引导设备Id
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.GuidanceTargetModel.IsValidation">
+            <summary>
+            引导信息是否被验证
+            需要与被引导设备上的被引导信息进行比较
+            </summary>
+        </member>
+        <member name="T:AntiUAV.WebApi.Model.Relation">
+            <summary>
+            关联关系模型
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.Relation.From">
+            <summary>
+            来源设备id
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.Relation.TargetId">
+            <summary>
+            目标id
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.Relation.To">
+            <summary>
+            关联到（设备）服务地址
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.Relation.Category">
+            <summary>
+            关系类型
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.Relation.IsValidation">
+            <summary>
+            引导信息是否被验证
+            需要与被引导设备上的被引导信息进行比较
+            </summary>
+        </member>
+        <member name="T:AntiUAV.WebApi.Model.RelationCategory">
+            <summary>
+            关系类型
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.RelationCategory.Transpond">
+            <summary>
+            转发
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.RelationCategory.Tracking">
+            <summary>
+            跟踪
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.RelationCategory.Hitting">
+            <summary>
+            打击
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.RelationCategory.Ticking">
+            <summary>
+            诱骗
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.RelationCategory.Monitoring">
+            <summary>
+            监视
+            </summary>
+        </member>
+        <member name="T:AntiUAV.WebApi.Model.ServiceResponse">
+            <summary>
+            结果标准化模型
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.ServiceResponse.HttpCode">
+            <summary>
+            HttpCode
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.ServiceResponse.Code">
+            <summary>
+            服务码
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.ServiceResponse.Message">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="T:AntiUAV.WebApi.Model.ServiceResponse`1">
+            <summary>
+            结果标准化模型
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.ServiceResponse`1.Data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="T:AntiUAV.WebApi.Model.ServiceResponseCode">
+            <summary>
+            服务码枚举
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.ServiceResponseCode.Success">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.ServiceResponseCode.Fail">
+            <summary>
+            失败
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.ServiceResponseCode.Error">
+            <summary>
+            异常
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.ServiceResponseCode.NoPermission">
+            <summary>
+            无权限
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.ServiceResponseCode.NotFoundService">
+            <summary>
+            未找到服务
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.ServiceResponseCode.RequestError">
+            <summary>
+            请求异常
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.ServiceResponseCode.UnKnowError">
+            <summary>
+            未知异常
+            </summary>
+        </member>
+        <member name="T:AntiUAV.WebApi.Model.SHReportModel">
+            <summary>
+            目标位置信息
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.SHReportModel.Id">
+            <summary>
+            目标ID
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.SHReportModel.DeviceId">
+            <summary>
+            所属设备ID
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.SHReportModel.Lat">
+            <summary>
+            纬度
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.SHReportModel.Lng">
+            <summary>
+            经度
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.SHReportModel.Alt">
+            <summary>
+            海拔
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.SHReportModel.FlyDirection">
+            <summary>
+            航向
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.SHReportModel.V">
+            <summary>
+            切向速度
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.SHReportModel.TrackTime">
+            <summary>
+            航迹时间
+            </summary>
+        </member>
+        <member name="T:AntiUAV.WebApi.Model.SystemRole">
+            <summary>
+            系统角色
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.SystemRole.Super">
+            <summary>
+            超管角色
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.SystemRole.Admin">
+            <summary>
+            管理员角色
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.SystemRole.Client">
+            <summary>
+            客户端角色
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.SystemRole.Device">
+            <summary>
+            设备端角色
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.SystemRole.DeviceOperation">
+            <summary>
+            设备端操作员角色
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.Model.SystemRole.All">
+            <summary>
+            全部角色
+            </summary>
+        </member>
+        <member name="T:AntiUAV.WebApi.Model.TargetModel">
+            <summary>
+            推送目标数据类型
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.TargetModel.TrackRelationShip">
+            <summary>
+            跟踪关联关系id
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.TargetModel.TranspondRelationShip">
+            <summary>
+            转发关联关系id
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.TargetModel.HitRelationShip">
+            <summary>
+            打击关联关系id
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.TargetModel.TickRelationShip">
+            <summary>
+            诱骗关联关系id
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.TargetModel.MonitorRelationShip">
+            <summary>
+            监视关联关系id
+            </summary>
+        </member>
+        <member name="T:AntiUAV.WebApi.Model.TokenModel">
+            <summary>
+            令牌模型
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.TokenModel.uid">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.TokenModel.rold">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.TokenModel.username">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.TokenModel.access_token">
+            <summary>
+            访问令牌
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.TokenModel.expire_in">
+            <summary>
+            过期时长
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.TokenModel.nbf">
+            <summary>
+            授权时间
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.TokenModel.refresh_token">
+            <summary>
+            刷新令牌
+            </summary>
+        </member>
+        <member name="T:AntiUAV.WebApi.Model.UserPwdUpdate">
+            <summary>
+            用户修改密码模型
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.UserPwdUpdate.OldPwd">
+            <summary>
+            旧密码
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Model.UserPwdUpdate.NewPwd">
+            <summary>
+            新密码
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.Startup.Configuration">
+            <summary>
+            配置信息
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:AntiUAV.WebApi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+             This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+        <member name="T:AntiUAV.WebApi.SwaggerDoc.ApiGroupAttribute">
+            <summary>
+            系统分组特性
+            </summary>
+        </member>
+        <member name="M:AntiUAV.WebApi.SwaggerDoc.ApiGroupAttribute.#ctor(AntiUAV.WebApi.SwaggerDoc.ApiGroupNames)">
+            <summary>
+            构造
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="P:AntiUAV.WebApi.SwaggerDoc.ApiGroupAttribute.GroupName">
+            <summary>
+            分组名称
+            </summary>
+        </member>
+        <member name="T:AntiUAV.WebApi.SwaggerDoc.ApiGroupNames">
+            <summary>
+            系统分组枚举值
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.SwaggerDoc.ApiGroupNames.Meatdata">
+            <summary>
+            元数据
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.SwaggerDoc.ApiGroupNames.DeviceOperation">
+            <summary>
+            设备操作
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.SwaggerDoc.ApiGroupNames.Access">
+            <summary>
+            访问操作
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.SwaggerDoc.ApiGroupNames.RealTime">
+            <summary>
+            实时操作
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.SwaggerDoc.ApiGroupNames.Token">
+            <summary>
+            令牌
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.SwaggerDoc.ApiGroupNames.TargetHistory">
+            <summary>
+            历史目标
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.SwaggerDoc.ApiGroupNames.Gis">
+            <summary>
+            地理信息相关
+            </summary>
+        </member>
+        <member name="F:AntiUAV.WebApi.SwaggerDoc.ApiGroupNames.Config">
+            <summary>
+            配置
+            </summary>
+        </member>
+        <member name="T:AntiUAV.WebApi.SwaggerDoc.GroupInfoAttribute">
+            <summary>
+            系统模块枚举注释
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.SwaggerDoc.GroupInfoAttribute.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.SwaggerDoc.GroupInfoAttribute.Version">
+            <summary>
+            版本信息
+            </summary>
+        </member>
+        <member name="P:AntiUAV.WebApi.SwaggerDoc.GroupInfoAttribute.Description">
+            <summary>
+            描述信息
+            </summary>
+        </member>
+    </members>
+</doc>

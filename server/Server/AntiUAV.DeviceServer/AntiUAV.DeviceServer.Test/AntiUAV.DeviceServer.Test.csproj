@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AntiUAV.DeviceServer.Plugin\AntiUAV.DevicePlugin.ProbeR04\AntiUAV.DevicePlugin.ProbeR04.csproj" />
+  </ItemGroup>
+
+</Project>

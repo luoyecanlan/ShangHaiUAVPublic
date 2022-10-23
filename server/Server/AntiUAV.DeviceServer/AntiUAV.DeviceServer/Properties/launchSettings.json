@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "AntiUAV.DeviceServer": {
+      "commandName": "Project",
+      "commandLineArgs": "5",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

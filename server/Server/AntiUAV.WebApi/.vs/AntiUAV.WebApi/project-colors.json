@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "1bb29110-fd93-4214-a5f4-e1227a83805a": {
+      "ProjectGuid": "1bb29110-fd93-4214-a5f4-e1227a83805a",
+      "DisplayName": "AntiUAV.WebApi",
+      "ColorIndex": 0
+    },
+    "d974979f-c6e7-416a-95a5-3d7142320f71": {
+      "ProjectGuid": "d974979f-c6e7-416a-95a5-3d7142320f71",
+      "DisplayName": "AntiUAV.Bussiness",
+      "ColorIndex": 1
+    },
+    "31eb41e2-6517-43a5-9366-0b8fc1142c25": {
+      "ProjectGuid": "31eb41e2-6517-43a5-9366-0b8fc1142c25",
+      "DisplayName": "DbOrm.AntiUAV.Entity",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "杂项文件",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 3
+}

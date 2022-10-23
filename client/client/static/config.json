@@ -1,0 +1,15 @@
+{
+
+  "api_url": "http://127.0.0.1:8099",
+  "999":"http://120.48.147.194:8099",
+  "flyer_url": "http://120.48.147.194:10099/index.html",
+  "flyer_url1": "http://120.48.147.194:20202/index.html",
+  "infraredToken": "",
+  "visibleLightToken": "",
+  "map_center": [
+    116.570607,
+    39.777473
+  ]
+}
+
+

@@ -1,0 +1,96 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "16892ce5-f962-48d7-85c0-eeb5c7402e99": {
+      "ProjectGuid": "16892ce5-f962-48d7-85c0-eeb5c7402e99",
+      "DisplayName": "AntiUAV.DeviceServer",
+      "ColorIndex": 0
+    },
+    "fa49061a-ddc8-4327-a7cf-71146a22bc2c": {
+      "ProjectGuid": "fa49061a-ddc8-4327-a7cf-71146a22bc2c",
+      "DisplayName": "AntiUAV.DevicePlugin.Obstruct03",
+      "ColorIndex": 1
+    },
+    "e1cdb9dc-b2e8-4ee7-9c22-79b04558250b": {
+      "ProjectGuid": "e1cdb9dc-b2e8-4ee7-9c22-79b04558250b",
+      "DisplayName": "AntiUAV.DevicePlugin.ProbeR02",
+      "ColorIndex": 2
+    },
+    "71b3f871-ed37-424b-b430-9f0e2e81534d": {
+      "ProjectGuid": "71b3f871-ed37-424b-b430-9f0e2e81534d",
+      "DisplayName": "AntiUAV.DeviceServer.Abstractions",
+      "ColorIndex": 3
+    },
+    "5867c143-7e1e-4521-bf31-ef881bfc90f1": {
+      "ProjectGuid": "5867c143-7e1e-4521-bf31-ef881bfc90f1",
+      "DisplayName": "AntiUAV.DevicePlugin.Obstruct02",
+      "ColorIndex": 4
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "杂项文件",
+      "ColorIndex": -1
+    },
+    "345a1c12-d63e-4c6d-8b87-52d2d28f7bd0": {
+      "ProjectGuid": "345a1c12-d63e-4c6d-8b87-52d2d28f7bd0",
+      "DisplayName": "AntiUAV.DevicePlugin.Obstruct05",
+      "ColorIndex": 5
+    },
+    "1e568e86-ce2b-4c65-a152-c4a0bb3e6b21": {
+      "ProjectGuid": "1e568e86-ce2b-4c65-a152-c4a0bb3e6b21",
+      "DisplayName": "AntiUAV.DevicePlugin.Obstruct04",
+      "ColorIndex": 6
+    },
+    "3abc0569-467c-4965-ada7-551fa1069f47": {
+      "ProjectGuid": "3abc0569-467c-4965-ada7-551fa1069f47",
+      "DisplayName": "AntiUAV.DevicePlugin.Obstruct06",
+      "ColorIndex": 7
+    },
+    "5ccf6581-ae5e-4f26-9170-f672d1e8f0d6": {
+      "ProjectGuid": "5ccf6581-ae5e-4f26-9170-f672d1e8f0d6",
+      "DisplayName": "AntiUAV.DevicePlugin.AirSwitch02",
+      "ColorIndex": 8
+    },
+    "80b56d2e-3cfa-45e8-9acf-238e69866f12": {
+      "ProjectGuid": "80b56d2e-3cfa-45e8-9acf-238e69866f12",
+      "DisplayName": "DbOrm.AntiUAV",
+      "ColorIndex": 9
+    },
+    "ec5709d4-0e6a-41c8-9cd8-f6be3a6892dc": {
+      "ProjectGuid": "ec5709d4-0e6a-41c8-9cd8-f6be3a6892dc",
+      "DisplayName": "DbOrm.AntiUAV.Entity",
+      "ColorIndex": 10
+    },
+    "447f3b3b-9908-4e06-a9b5-e79fad38dd92": {
+      "ProjectGuid": "447f3b3b-9908-4e06-a9b5-e79fad38dd92",
+      "DisplayName": "DbOrm",
+      "ColorIndex": 11
+    },
+    "e908ddd7-30d5-4fb4-b2bf-fbbf2a836460": {
+      "ProjectGuid": "e908ddd7-30d5-4fb4-b2bf-fbbf2a836460",
+      "DisplayName": "AntiUAV.DevicePlugin.ProbeD01",
+      "ColorIndex": 12
+    },
+    "defb2ff5-edce-460e-aeac-a809ba5c7e89": {
+      "ProjectGuid": "defb2ff5-edce-460e-aeac-a809ba5c7e89",
+      "DisplayName": "AntiUAV.Bussiness",
+      "ColorIndex": 13
+    },
+    "36f56dbd-7154-4d1f-839d-29eccfa27425": {
+      "ProjectGuid": "36f56dbd-7154-4d1f-839d-29eccfa27425",
+      "DisplayName": "AntiUAV.DevicePlugin.ProbeP04",
+      "ColorIndex": 14
+    },
+    "1ad00bc0-63d1-4e8d-b8e0-d324d4a89fb5": {
+      "ProjectGuid": "1ad00bc0-63d1-4e8d-b8e0-d324d4a89fb5",
+      "DisplayName": "AntiUAV.DevicePlugin.MonitorP13",
+      "ColorIndex": 15
+    },
+    "7bc0ea3b-91a4-4bd2-961a-2e453fc4b9e8": {
+      "ProjectGuid": "7bc0ea3b-91a4-4bd2-961a-2e453fc4b9e8",
+      "DisplayName": "AntiUAV.DevicePlugin.MonitorP11",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
